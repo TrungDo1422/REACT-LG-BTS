@@ -1,0 +1,25 @@
+.campus_container {
+    background: url(https://github.com/quynguyen20072000/STU_LG-BTS/blob/develop/assets/images/bg/home-8-bg.jpg?raw=true);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .campus_Cards {
+        margin-right: 120px;
+    }
+    .card-item {
+        border-radius: 8px;
+        padding: 30px;
+
+        & img {
+            border-radius: 8px;
+        }
+        & span {
+            padding: 5px;
+        }
+    }
+
+    @media only screen and (max-width: 1080px) {
+        .campus_Cards {
+        }
+    }
+}
