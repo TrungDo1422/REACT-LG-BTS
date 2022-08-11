@@ -1,5 +1,17 @@
+import About from '~/components/About';
+import Banner from '~/components/Banner';
+import Categories from '~/components/Categories';
+import Testimonial from '~/components/Testimonial';
+
 function Home() {
-    return <h2>Home</h2>;
+    return (
+        <>
+            <Banner />
+            <About />
+            <Categories />
+            <Testimonial />
+        </>
+    );
 }
 
 export default Home;
