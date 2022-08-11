@@ -1,0 +1,84 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home-styles {
+    padding: 105px;
+}
+
+.name-alumni {
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    margin: 0 0 26px;
+    line-height: 1.2;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.author-desc {
+    padding: 70px 15px;
+    background-color: #f3f8f9;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 13px;
+}
+
+.author-desc .desc {
+    text-align: center;
+    position: relative;
+    color: #505050;
+    padding: 80px 40px 30px;
+    font-size: 23px;
+    line-height: 33px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.author-desc .desc .quote {
+    width: 66px;
+    top: -13px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.author-desc .author-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+}
+
+.author-desc .author-img img {
+    width: auto;
+    border-radius: 50%;
+    padding-bottom: 15px;
+}
+
+.author-part {
+    text-align: center;
+    padding-top: 45px;
+}
+
+.author-part .name {
+    display: block;
+    font-size: 20px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #226fb7 !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 40px !important;
+    background: #649acc !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #226fb7 !important;
+}
+
+button:focus {
+    outline: none !important;
+}

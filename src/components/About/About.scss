@@ -1,0 +1,239 @@
+// .son_container {
+//     z-index: 99;
+//     max-width: 1270px;
+//     width: 100%;
+//     padding-left: 15px;
+//     padding-right: 15px;
+//     margin: 0 auto;
+//     padding: 0 0 100px;
+//     overflow: hidden;
+// }
+.about {
+    padding-bottom: 70px;
+}
+
+.about-content {
+    background: #e7f4f6;
+    padding: 60px 60px 70px 60px;
+    border-radius: 5px;
+    margin-right: 35px;
+    margin-top: -60px;
+    margin-left: 100px;
+    margin-right: 70px;
+}
+
+.about-subtitle {
+    color: #226fb7;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation-duration: 2000ms;
+    animation-delay: 300ms;
+    animation-name: fadeInUp;
+}
+
+.about-title h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #111111;
+    margin: 0 0 26px;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 36px;
+    animation-duration: 2000ms;
+    animation-delay: 400ms;
+    animation-name: fadeInUp;
+}
+
+.about-desc {
+    font-size: 18px;
+    line-height: 30px;
+    color: #505050;
+    margin-bottom: 37px;
+    animation-duration: 2000ms;
+    animation-delay: 500ms;
+    animation-name: fadeInUp;
+}
+
+.about-road {
+    margin-top: -60px;
+    margin-right: 100px;
+}
+
+.about-road h4 {
+    font-family: 'Nunito', sans-serif;
+    background: #226fb7;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 18px 25px;
+    text-align: center;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.about-road ul li {
+    position: relative;
+    background: #e7f4f6;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    padding: 20px;
+    padding-left: 0 !important;
+    overflow: hidden;
+    height: 60px;
+}
+
+.numb {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #226fb7;
+    border-right: 1px solid #226fb7;
+    padding-right: 10px;
+    font-weight: 600;
+    width: 60px;
+    font-size: 22px;
+}
+
+.numb span {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.desc {
+    padding-left: 95px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: #505050;
+    line-height: 26px;
+    font-size: 15px;
+    margin-top: -10px;
+}
+/*  Mobile & Tablet */
+@media (max-width: 991px) {
+    .son_container {
+        max-width: 720px;
+    }
+
+    .order-last {
+        order: unset !important;
+    }
+
+    .about-road {
+        margin-top: 70px;
+    }
+
+    .about-road ul li {
+        padding: 30px;
+    }
+
+    .about-content {
+        margin-top: 60px;
+        margin-right: 0;
+    }
+
+    .about-title h2 {
+        font-size: 30px;
+    }
+
+    .categories {
+        padding-bottom: 40px;
+    }
+
+    .categories-title h2 {
+        font-size: 30px;
+    }
+
+    .categories-content h4 {
+        font-size: 18px;
+    }
+
+    .categories-content span {
+        font-size: 15px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 991px) {
+    .son_container {
+        max-width: 720px;
+    }
+
+    .order-last {
+        order: unset !important;
+    }
+
+    .about-road {
+        margin-top: 70px;
+    }
+
+    .about-content {
+        margin-top: 60px;
+        margin-right: 0;
+    }
+
+    .categories {
+        padding-bottom: 40px;
+    }
+
+    .categories-content h4 {
+        font-size: 18px;
+    }
+
+    .categories-content span {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .son_container {
+        max-width: 540px;
+    }
+
+    .order-last {
+        order: unset !important;
+    }
+
+    .about-road {
+        margin-top: 70px;
+    }
+
+    .about-content {
+        margin-top: 60px;
+        padding: 40px 30px 50px;
+    }
+
+    .about-subtitle {
+        font-size: 16px;
+    }
+
+    .about-desc {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .about-title h2 {
+        font-size: 25px;
+    }
+
+    .categories {
+        padding-bottom: 40px;
+    }
+
+    .categories-title h2 {
+        font-size: 25px;
+    }
+
+    .categories-content h4 {
+        font-size: 18px;
+    }
+
+    .categories-content span {
+        font-size: 15px;
+    }
+}

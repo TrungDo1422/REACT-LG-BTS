@@ -1,0 +1,112 @@
+#slider {
+    /* position: relative; */
+    width: auto;
+    padding: 125px 0 425px;
+    background: url('../../assets/image/devplus/Devplus_missions.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+#slider .text-content {
+    /* position: absolute; */
+
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+#slider .text-heading {
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 66px;
+    text-align: center !important;
+    text-transform: capitalize;
+    margin: 0 0 16px;
+    font-family: 'Nunito', sans-serif;
+}
+#slider .text-description {
+    color: #505050;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0px 0px 35px;
+    text-align: center;
+}
+#slider .btn-learn-more {
+    background: #ff5421;
+    color: #ffffff;
+    max-width: 250px;
+    border: 1px solid #ff5421;
+    padding: 16px 58px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+}
+#slider .btn-learn-more:hover {
+    cursor: pointer;
+    background: #ff914d;
+}
+#slider .banner-style-custom {
+    color: #ffffff;
+    // background: #ff5421;
+}
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+.capitalize {
+    text-transform: capitalize !important;
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
