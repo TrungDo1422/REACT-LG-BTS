@@ -24,13 +24,13 @@ function Footer() {
                             <h4 className="widget-title">FOR DEVPLUS</h4>
                             <ul className="site-map text-white">
                                 <li>
-                                    <a href="#">Training space</a>
+                                    <a href="# ">Training space</a>
                                 </li>
                                 <li>
-                                    <a href="#">Alumni network</a>
+                                    <a href="# ">Alumni network</a>
                                 </li>
                                 <li>
-                                    <a href="#">Connect with experts</a>
+                                    <a href="# ">Connect with experts</a>
                                 </li>
                             </ul>
                         </Col>
@@ -38,13 +38,13 @@ function Footer() {
                             <h4 className="widget-title">OUR CAMPUS</h4>
                             <ul className="site-map text-white">
                                 <li>
-                                    <a>One plus (+) Programing foundation</a>
+                                    <a href="# ">One plus (+) Programing foundation</a>
                                 </li>
                                 <li>
-                                    <a>Two plus (++) Skill up and onboard</a>
+                                    <a href="# ">Two plus (++) Skill up and onboard</a>
                                 </li>
                                 <li>
-                                    <a>Three plus (+++) Become a senior</a>
+                                    <a href="# ">Three plus (+++) Become a senior</a>
                                 </li>
                             </ul>
                         </Col>

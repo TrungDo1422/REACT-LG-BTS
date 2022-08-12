@@ -13,14 +13,17 @@
         "@testing-library/user-event": "^13.5.0",
         "antd": "^4.22.4",
         "axios": "^0.27.2",
+        "bootstrap": "^5.2.0",
         "customize-cra": "^1.0.0",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
         "react-app-rewired": "^2.2.1",
+        "react-bootstrap": "^2.5.0",
         "react-dom": "^18.2.0",
+        "react-iframe": "^1.8.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
-        "sass": "^1.54.0",
+        "sass": "^1.54.4",
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {

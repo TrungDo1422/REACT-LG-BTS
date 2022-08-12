@@ -1,0 +1,144 @@
+.question_container {
+    background-color: #ffffff;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    position: relative;
+
+
+    .list_container {
+        background-color: #f9f8f8;
+        padding: 30px;
+        .list_collapse {
+            border: none;
+            outline: none;
+            .item {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 700;
+                background: #ffffff;
+                font-size: 18px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+
+                & p {
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+                & :focus{
+                    background-color: #226fb7;
+                }
+            }
+           
+        }
+    }
+
+    .img_container {
+        .img_media {
+            background: url('../../assets/image/devplus/video_03.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            min-height: 615px;
+            animation-duration: 2000ms;
+            animation-delay: 200ms;
+            animation-name: fadeInUp;
+        }
+        .icon_media {
+            position: relative;
+
+            & a {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                width: 70px;
+                height: 70px;
+                text-align: center;
+                background: #226fb7;
+                border-radius: 100%;
+                color: #ffffff;
+                & i {
+                    line-height: 70px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            & a:hover::before {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: -25px;
+                width: 120px;
+                height: 120px;
+                border-radius: 100%;
+                animation: pulse-border 2000ms ease-out infinite;
+                transition: all 0.3s ease;
+                z-index: -1;
+            }
+
+            @keyframes pulse-border {
+                from {
+                    transform: scale(1);
+                    opacity: 0.8;
+                    background-color: #226fb7;
+                }
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+            .animate-delay-01s {
+                --animate-delay: 0.1s;
+            }
+            .animate-delay-02s {
+                --animate-delay: 0.2s;
+            }
+        }
+    }
+
+    .modal_container {
+        position: relative;
+        #my-modal {
+            right: 50%;
+            background-color: rgba(0, 0, 0, 0.371);
+            width: 100%;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity linear 0.2s;
+
+            .modal_body {
+                position: relative;
+            }
+
+            &:target {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+                text-decoration: none;
+                color: #000;
+            }
+            & iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+    }
+}

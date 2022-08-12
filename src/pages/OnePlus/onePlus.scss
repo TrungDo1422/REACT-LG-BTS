@@ -1,0 +1,15 @@
+.one-plus {
+    padding-left: 100px;
+    padding-right: 100px;
+    .image {
+        max-width: 100%;
+    }
+    .zoom {
+        transition: transform 0.5s ease;
+        margin: 0 auto;
+        z-index: 4;
+    }
+    .zoom:hover {
+        transform: scale(1.1);
+    }
+}
