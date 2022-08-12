@@ -4,7 +4,7 @@ img {
 }
 
 .home-styles {
-    padding: 105px;
+    padding: 100px;
 }
 
 .name-alumni {
@@ -84,4 +84,20 @@ img {
 
 button:focus {
     outline: none !important;
+}
+@media only screen and (max-width: 768px) {
+    .home-styles {
+        padding: 50px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .home-styles {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .home-styles {
+        padding: 10px;
+    }
 }

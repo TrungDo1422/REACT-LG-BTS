@@ -7,7 +7,7 @@ function About() {
             <div className="about">
                 <div>
                     <Row>
-                        <Col lg={{ span: 8 }} md={24} sm={24} className="order-last">
+                        <Col lg={{ span: 8 }} md={24} sm={24} xs={24} className="order-last">
                             <div className="about-road">
                                 <h4>Road to be a devplus</h4>
                                 <ul>
@@ -44,7 +44,7 @@ function About() {
                                 </ul>
                             </div>
                         </Col>
-                        <Col lg={{ span: 16 }} md={24} sm={24}>
+                        <Col lg={{ span: 16 }} md={24} sm={24} xs={24    }>
                             <div className="about-content">
                                 <div className="about-subtitle">ABOUT DEVPLUS</div>
                                 <div className="about-title">

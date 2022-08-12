@@ -10,13 +10,13 @@
 #slider .text-content {
     /* position: absolute; */
 
-    max-width: 750px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    font-size: 45px;
 }
 #slider .text-heading {
     color: #ffffff;
-    font-size: 55px;
     font-weight: 700;
     line-height: 66px;
     text-align: center !important;
@@ -108,5 +108,36 @@
         opacity: 1;
         -webkit-transform: none;
         transform: none;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .text-heading {
+        font-size: 45px;
+    }
+}
+@media only screen and (max-width: 1085px) {
+    .text-heading {
+        font-size: 45px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .text-heading {
+        font-size: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .text-heading {
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .text-heading {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .text-heading {
+        font-size: 25px;
     }
 }

@@ -1,5 +1,7 @@
 .about {
-    padding: 0 70px 70px 70px;
+    padding: 0 100px 70px 100px;
+    height: 460px;
+    position: relative;
 }
 
 .about-content {
@@ -7,6 +9,9 @@
     padding: 60px 60px 70px;
     border-radius: 5px;
     margin-top: -60px;
+    position: absolute;
+    left: -50%;
+    right: 50%;
 }
 
 .about-subtitle {
@@ -45,6 +50,8 @@
 
 .about-road {
     margin-top: -60px;
+    position: absolute;
+    right: -200%;
 }
 
 .about-road h4 {
@@ -117,12 +124,44 @@
     }
 }
 @media only screen and (max-width: 1200px) {
+    .about {
+        margin: 0 -50px 70px -50px;
+    }
 }
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1085px) {
+    .about {
+        margin: 0 -90px 70px -90px;
+    }
 }
 @media only screen and (max-width: 991px) {
+    .about {
+        height: auto;
+        margin: 0 0px 70px 0px;
+    }
+    .about-content {
+        position: static;
+        left: 0%;
+        right: 0%;
+        margin-top: 70px;
+    }
+    .about-road {
+        position: static;
+        left: 0%;
+        margin-top: 70px;
+    }
+    .about-road li {
+        padding: 30px;
+    }
 }
 @media (max-width: 768px) {
+    .about {
+        height: auto;
+        margin: 0 -40px 70px -40px;
+    }
 }
 @media only screen and (max-width: 450px) {
+    .about {
+        height: auto;
+        margin: 0 -80px 70px -80px;
+    }
 }
