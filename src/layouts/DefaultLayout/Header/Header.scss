@@ -1,7 +1,8 @@
 
 .container_son {
-    width: 1240px;
+    width: 1140px;
     margin: 0 auto;
+    // overflow: hidden;
 }
 
 .header {
@@ -9,7 +10,7 @@
     height: 120px;
     display: flex;
     align-items: center;
-    position: fixed;
+    // position: fixed;
     top:0;
     background: #fff;
 }
@@ -82,12 +83,13 @@
     position: absolute;
     display: none;
     background: #fff;
-    top: calc(100% + 35px);
+    top: calc(99% + 56px);
     box-shadow: -2px 1px 8px rgba(189, 189, 189);
     padding: 14px 0;
     // transition: all .3s ease-in-out;
     animation-name: fadeInDown ;
-    animation-duration: 300ms;
+    animation-duration: 300ms;  
+    z-index: 1000;
     >li {
         list-style: none;
         >a{
@@ -150,6 +152,7 @@
     background: #226FB7;
     color: #fff;
     width: 40px;
+    padding: 6px 0;
     padding-left: 12px;
     border-radius: 50%;
     &:hover {
@@ -207,7 +210,7 @@
 }
 
 .navbar-submenu {
-    position: absolute;
+    // position: absolute;
     text-decoration: none;
     list-style: none;
     background: #fff;
@@ -229,9 +232,10 @@
         justify-content: space-around;
     }
 
-    // .container_son {
-    //     max-width: 720px;
-    // }
+    .container_son {
+        max-width: 720px;
+        // overflow: hidden;
+    }
     .header-wrap {
         width: 720px;
         margin: 0 auto;
@@ -243,6 +247,14 @@
 
     .header-icon {
         display: none;
+    }
+
+    .header-icon-menu {
+        
+    }
+
+    .cc {
+        display: none !important;
     }
 
 
@@ -262,7 +274,10 @@
     }
 
     .navbar-submenu {
-        width: 540px;
+            position: absolute;
+            top: 73px;
+            right: 0;
+            width: 550px;
     }
 }
 
@@ -283,19 +298,27 @@
         display: none;
     }
 
-    .navbar-submenu {
-        width: 480px;
-    }
+        .navbar-submenu {
+            position: absolute;
+            top: 73px;
+            right: 0;
+            width: 480px;
+        }
 }
 
 @media only screen and (max-width: 739px) {
+    .container_son {
+        width: 480px;
+        overflow: hidden;
+    }
+
     .header {
             display: flex;
             justify-content: space-around;
     }
     
     .header-wrap {
-            width: 480px;
+            width: 100%;
             margin: 0 auto;
     }
     

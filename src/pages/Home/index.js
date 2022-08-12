@@ -1,10 +1,23 @@
 import './Home.scss';
+import About from '~/components/About';
+import Banner from '~/components/Banner';
+import Categories from '~/components/Categories';
+import Concern from '~/components/Concern';
+import CTA from '~/components/CTA';
+import Popular from '~/components/Popular';
+import Testimonial from '~/components/Testimonial';
 
 function Home() {
     return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
+        <>
+            <Banner />
+            <About />
+            <Categories />
+            <Popular />
+            <CTA />
+            <Concern />
+            <Testimonial />
+        </>
     );
 }
 

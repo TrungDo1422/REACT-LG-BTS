@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { Col, Drawer, Image, Menu, Row } from 'antd';
+import { Col, Drawer, Image, Row } from 'antd';
 import React, { useState } from 'react';
 import './Header.scss';
 
 function Header() {
     const [visible, setVisible] = useState(false);
     const [imageVisible, setImageVisible] = useState(false);
+    const [sidebar, setSidebar] = useState(false);
 
     const showDrawer = () => {
         setVisible(true);
@@ -21,27 +22,13 @@ function Header() {
     return (
         <div className="header">
             <div className="container_son">
-                <Row className="header-wrap" justify="center">
-                    <Col lg={{ span: 4 }} md={{ span: 12 }} sm={{ span: 12 }}>
+                <Row className="header-wrap" justify="space-between">
+                    <Col lg={{ span: 4 }} md={{ span: 4 }} sm={{ span: 12 }}>
                         <div className="header-logo">
                             <img alt="" src="https://devplus.edu.vn/assets/images/devplus/Artboard_2.png" />
-                            <ul className="navbar-submenu">
-                                <li>
-                                    <a href="# ">Home</a>
-                                </li>
-                                <li>
-                                    <a href="# ">About Devplus</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Our Programme</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Devplus ACTIVITIES</a>
-                                </li>
-                            </ul>
                         </div>
                     </Col>
-                    <Col lg={{ span: 16 }}>
+                    <Col className="cc" lg={{ span: 16 }}>
                         <div className="header-menu">
                             <ul>
                                 <li>
@@ -61,13 +48,13 @@ function Header() {
                                     <div className="header-submenu">
                                         <ul className="header-submenu-list">
                                             <li>
-                                                <a href="# ">One Plus Campus</a>
+                                                <a href="/onePlus">One Plus Campus</a>
                                             </li>
                                             <li>
-                                                <a href="# ">Two Plus Campus</a>
+                                                <a href="/twoPlus">Two Plus Campus</a>
                                             </li>
                                             <li>
-                                                <a href="# ">Three Plus Campus</a>
+                                                <a href="/threePlus">Three Plus Campus</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -79,29 +66,40 @@ function Header() {
                         </div>
                     </Col>
 
-                    <Col lg={{ span: 4 }}>
+                    <Col className="cc" lg={{ span: 4 }}>
                         <div className="header-icon" onClick={showDrawer}>
                             <FontAwesomeIcon icon={faBars} />
                         </div>
                     </Col>
-                    {/* <Col md={{ span: 12 }} sm={{ span: 12 }}>
-                        <Dropdown className="header-icon-drop" overlay={menu} placement="bottomLeft" width={500}>
-                            <a className="header-icon-drop-link" href="# " onClick={(e) => e.preventDefault()}>
-                                <div className="header-icon-menu-drheader-icon/>
-                                </div>
-                            </a>
-                        </Dropdown>
-                    </Col> */}
-                    <Col md={{ span: 12 }} sm={{ span: 12 }}>
-                        <div className="header-icon-menu" onClick={{}}>
+                    <Col md={{ span: 6 }} sm={{ span: 12 }}>
+                        <div
+                            className="header-icon-menu"
+                            onClick={() => {
+                                setSidebar(!sidebar);
+                            }}
+                        >
                             <FontAwesomeIcon icon={faBars} />
+                            {sidebar ? (
+                                <ul className="navbar-submenu">
+                                    <li>
+                                        <a href="# ">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="# ">About Devplus</a>
+                                    </li>
+                                    <li>
+                                        <a href="# ">Our Programme</a>
+                                    </li>
+                                    <li>
+                                        <a href="# ">Devplus ACTIVITIES</a>
+                                    </li>
+                                </ul>
+                            ) : (
+                                <div />
+                            )}
                         </div>
                     </Col>
                 </Row>
-
-                {/* <Button type="primary" onClick={showDrawer}>
-                    Open
-                </Button> */}
                 <Drawer placement="right" closable={false} visible={visible} width={500} mask={false}>
                     <div className="navbar">
                         <div className="close-icon" onClick={onClose}>
@@ -125,7 +123,66 @@ function Header() {
                                     preview={{
                                         imageVisible: false,
                                     }}
-                                    // width={200}
+                                    src="https://devplus.edu.vn/assets/images/devplus/2.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
+                                    src="https://devplus.edu.vn/assets/images/devplus/4.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
+                                    src="https://devplus.edu.vn/assets/images/devplus/6.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
+                                    src="https://devplus.edu.vn/assets/images/devplus/3.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
+                                    src="https://devplus.edu.vn/assets/images/devplus/2.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
+                                    src="https://devplus.edu.vn/assets/images/devplus/4.png"
+                                    onClick={() => setImageVisible(true)}
+                                />
+                            </Col>
+                            <Col lg={{ span: 8 }}>
+                                <Image
+                                    className="navbar-img"
+                                    preview={{
+                                        imageVisible: false,
+                                    }}
                                     src="https://devplus.edu.vn/assets/images/devplus/1.png"
                                     onClick={() => setImageVisible(true)}
                                 />
@@ -148,7 +205,6 @@ function Header() {
                                         preview={{
                                             imageVisible: false,
                                         }}
-                                        // width={200}
                                         src="https://devplus.edu.vn/assets/images/devplus/5.png"
                                         onClick={() => setImageVisible(true)}
                                     />
