@@ -2,6 +2,7 @@
 @import 'antd/dist/antd.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 :root {
     --font-family: 'Nunito', sans-serif;
 }
@@ -22,4 +23,8 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+.container {
+    overflow: hidden;
 }

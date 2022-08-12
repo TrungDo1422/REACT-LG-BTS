@@ -82,14 +82,14 @@ function Footer() {
                     <div className="footer-bottom">
                         <div className="container">
                             <Row justify="space-between">
-                                <Col >
+                                <Col>
                                     <div className="footer-logo">
                                         <a href="# ">
                                             <img src={artboard2} alt="" />
                                         </a>
                                     </div>
                                 </Col>
-                                <Col >
+                                <Col>
                                     <ul className="footer-social">
                                         <li>
                                             <a href="https://www.facebook.com/Devplusprogramme">
