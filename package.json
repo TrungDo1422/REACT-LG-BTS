@@ -17,12 +17,16 @@
         "customize-cra": "^1.0.0",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
+        "react-3d-rotation-box": "^1.0.1",
         "react-app-rewired": "^2.2.1",
         "react-bootstrap": "^2.5.0",
         "react-dom": "^18.2.0",
+        "react-iframe": "^1.8.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
-        "sass": "^1.54.0",
+        "react-vanilla-tilt": "^1.0.0",
+        "sass": "^1.54.4",
+        "vanilla-tilt": "^1.7.2",
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
