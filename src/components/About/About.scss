@@ -153,15 +153,36 @@
         padding: 30px;
     }
 }
+@media only screen and (max-width: 1200px) {
+    .about-title h2 {
+        font-size: 36px;
+    }
+}
+@media only screen and (max-width: 1025px) {
+    .about-title h2 {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .about-title h2 {
+        font-size: 25px;
+    }
+}
 @media (max-width: 768px) {
     .about {
         height: auto;
         margin: 0 -40px 70px -40px;
+    }
+    .about-title h2 {
+        font-size: 20px;
     }
 }
 @media only screen and (max-width: 450px) {
     .about {
         height: auto;
         margin: 0 -80px 70px -80px;
+    }
+    .about-title h2 {
+        font-size: 20px;
     }
 }

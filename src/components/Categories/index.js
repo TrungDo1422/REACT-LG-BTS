@@ -16,12 +16,7 @@ function Categories() {
                 <Row>
                     {CategoryItem.map((item, index) => (
                         <Col lg={{ span: 8 }} md={{ span: 12 }} sm={{ span: 24 }} xs={24}>
-                            <a
-                                href="/"
-                                onclick="return false;"
-                                className="categories-item d-flex"
-                                style={{ animationDelay: '500ms' }}
-                            >
+                            <div className="categories-item " style={{ animationDelay: '500ms' }}>
                                 <div className="categories-icon">
                                     <img src={item.img} alt="" />
                                 </div>
@@ -29,7 +24,7 @@ function Categories() {
                                     <h4 className="title">{item.title}</h4>
                                     <span>{item.content}</span>
                                 </div>
-                            </a>
+                            </div>
                         </Col>
                     ))}
                 </Row>
