@@ -1,20 +1,23 @@
-import React from "react";
-import Concern from "~/components/Concern";
-import CTA from "~/components/CTA";
-import Popular from "~/components/Popular";
-import OnePlus from "../OnePlus";
-
+import About from '~/components/About';
+import Banner from '~/components/Banner';
+import Categories from '~/components/Categories';
+import Concern from '~/components/Concern';
+import CTA from '~/components/CTA';
+import Popular from '~/components/Popular';
+import Testimonial from '~/components/Testimonial';
 
 function Home() {
     return (
-        <div>
-            <h2>Home</h2>
+        <>
+            <Banner />
+            <About />
+            <Categories />
             <Popular />
-            <CTA/>
-            <Concern/>
-        </div>
-    )
-
+            <CTA />
+            <Concern />
+            <Testimonial />
+        </>
+    );
 }
 
 export default Home;
