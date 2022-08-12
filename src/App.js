@@ -1,10 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
-// import Categories from './components/Categories';
-// import Testimonial from './components/Testimonial';
-// import About from './components/About';
-// import Banner from './components/Banner';
+
 import { DefaultLayout } from './layouts';
 import Loading from './components/Loading';
 

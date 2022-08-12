@@ -14,7 +14,7 @@ function Footer() {
                 <div className="footer">
                     <div className="container-footer">
                         <div className="footer-top">
-                            <Row gutter={30} justify="center">
+                            <Row className='row' gutter={30} justify="center">
                                 <Col lg={6} md={24} sm={24} xs={24}>
                                     <h4 className="widget-title">DEVELOP THE SKILLS TO MOVE FAST AND STAY AHEAD.</h4>
                                     <ul className="site-map">
