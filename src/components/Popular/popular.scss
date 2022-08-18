@@ -96,10 +96,12 @@
         }
     }
 
-    @media only screen and (max-width: 576) {
+    @media only screen and (max-width: 576px) {
         .campus_Cards {
-            margin-left: 150px;
             padding-bottom: 70px;
+        }
+        .campus_container .pd-70 {
+            padding: 10px;
         }
     }
 }

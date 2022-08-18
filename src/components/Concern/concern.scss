@@ -4,7 +4,6 @@
     padding-bottom: 50px;
     position: relative;
 
-
     .list_container {
         background-color: #f9f8f8;
         padding: 30px;
@@ -23,11 +22,10 @@
                     font-weight: 400;
                     font-size: 16px;
                 }
-                & :focus{
+                & :focus {
                     background-color: #226fb7;
                 }
             }
-           
         }
     }
 
@@ -138,6 +136,30 @@
             & iframe {
                 width: 800px;
                 height: 450px;
+            }
+        }
+        @media only screen and (max-width: 1080px) {
+            .modal {
+                & iframe {
+                    width: 650px;
+                    height: 400px;
+                }
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .modal {
+                & iframe {
+                    width: 500px;
+                    height: 350px;
+                }
+            }
+        }
+        @media only screen and (max-width: 576px) {
+            .modal {
+                & iframe {
+                    width: 350px;
+                    height: 200px;
+                }
             }
         }
     }

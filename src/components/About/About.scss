@@ -1,0 +1,188 @@
+.about {
+    padding: 0 100px 70px 100px;
+    height: 460px;
+    position: relative;
+}
+
+.about-content {
+    background: #e7f4f6;
+    padding: 60px 60px 70px;
+    border-radius: 5px;
+    margin-top: -60px;
+    position: absolute;
+    left: -50%;
+    right: 50%;
+}
+
+.about-subtitle {
+    color: #226fb7;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation-duration: 2000ms;
+    animation-delay: 300ms;
+    animation-name: fadeInUp;
+}
+
+.about-title h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #111111;
+    margin: 0 0 26px;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 36px;
+    animation-duration: 2000ms;
+    animation-delay: 400ms;
+    animation-name: fadeInUp;
+}
+
+.about-desc {
+    font-size: 18px;
+    line-height: 30px;
+    color: #505050;
+    margin-bottom: 37px;
+    animation-duration: 2000ms;
+    animation-delay: 500ms;
+    animation-name: fadeInUp;
+}
+
+.about-road {
+    margin-top: -60px;
+    position: absolute;
+    right: -200%;
+}
+
+.about-road h4 {
+    font-family: 'Nunito', sans-serif;
+    background: #226fb7;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 20px 25px;
+    text-align: center;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.about-road ul li {
+    position: relative;
+    background: #e7f4f6;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    padding: 20px;
+    padding-left: 0 !important;
+    overflow: hidden;
+    height: 60px;
+    animation-duration: 2000ms;
+    animation-delay: 500ms;
+    animation-name: fadeInUp;
+}
+
+.numb {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #226fb7;
+    border-right: 1px solid #226fb7;
+    padding-right: 10px;
+    font-weight: 600;
+    width: 60px;
+    font-size: 22px;
+}
+
+.numb span {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.desc {
+    padding-left: 95px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: #505050;
+    line-height: 26px;
+    font-size: 15px;
+    margin-top: -8px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .about {
+        margin: 0 -50px 70px -50px;
+    }
+}
+@media only screen and (max-width: 1085px) {
+    .about {
+        margin: 0 -90px 70px -90px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .about {
+        height: auto;
+        margin: 0 0px 70px 0px;
+    }
+    .about-content {
+        position: static;
+        left: 0%;
+        right: 0%;
+        margin-top: 70px;
+    }
+    .about-road {
+        position: static;
+        left: 0%;
+        margin-top: 70px;
+    }
+    .about-road li {
+        padding: 30px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .about-title h2 {
+        font-size: 36px;
+    }
+}
+@media only screen and (max-width: 1025px) {
+    .about-title h2 {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .about-title h2 {
+        font-size: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .about {
+        height: auto;
+        margin: 0 -40px 70px -40px;
+    }
+    .about-title h2 {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .about {
+        height: auto;
+        margin: 0 -80px 70px -80px;
+    }
+    .about-title h2 {
+        font-size: 20px;
+    }
+}
