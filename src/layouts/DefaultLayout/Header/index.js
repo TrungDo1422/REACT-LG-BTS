@@ -20,7 +20,7 @@ function Header() {
     };
 
     return (
-        <div className="header">
+        <div className="header_card">
             <div className="container_son">
                 <Row className="header-wrap" justify="space-between">
                     <Col lg={{ span: 4 }} md={{ span: 4 }} sm={{ span: 12 }}>
@@ -32,7 +32,7 @@ function Header() {
                         <div className="header-menu">
                             <ul>
                                 <li>
-                                    <a className="header-menu-home" href="# ">
+                                    <a className="header-menu-home" href="/">
                                         HOME
                                     </a>
                                 </li>
@@ -61,6 +61,11 @@ function Header() {
                                 </li>
                                 <li>
                                     <a href="# ">DEVPLUS ACTIVITIES</a>
+                                </li>
+                                <li>
+                                    <a className="" href="/admin">
+                                        ADMIN MANAGE
+                                    </a>
                                 </li>
                             </ul>
                         </div>

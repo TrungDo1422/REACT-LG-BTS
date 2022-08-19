@@ -2,7 +2,7 @@ import './Banner.scss';
 
 function Banner() {
     return (
-        <div className="container">
+        <div >
             <div id="slider">
                 <div className="text-content ">
                     <h2
