@@ -1,16 +1,14 @@
-.content-wrapper{
-    
+.content-wrapper {
+    background-color: #fff;
     #banner-modal {
-        background-color: rgba(67, 65, 65, 0.211);
         right: 50%;
         width: 100%;
     }
-
     .banner_modal {
         position: fixed;
         top: 0;
         right: 0;
-        left: 0;
+        left: 5%;
         bottom: 0;
         z-index: 10;
         display: flex;
@@ -22,9 +20,10 @@
 
         .modal_body {
             position: relative;
-            .table_card{
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                max-width: 1024px;
                 background-color: #fff;
-                width: 650px;
                 height: auto;
                 border-radius: 8px;
             }
@@ -42,21 +41,17 @@
             text-decoration: none;
             color: #000;
         }
-       
     }
     // ...............about..............
-
     #about-modal {
-        background-color: rgba(67, 65, 65, 0.211);
         right: 50%;
         width: 100%;
     }
-
     .about_modal {
         position: fixed;
         top: 0;
         right: 0;
-        left: 0;
+        left: 5%;
         bottom: 0;
         z-index: 10;
         display: flex;
@@ -68,9 +63,10 @@
 
         .modal_body {
             position: relative;
-            .table_card{
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
                 background-color: #fff;
-                width: 650px;
+                max-width: 1024px;
                 height: auto;
                 border-radius: 8px;
             }
@@ -88,6 +84,220 @@
             text-decoration: none;
             color: #000;
         }
-       
+    }
+    // ...............category..............
+    #category-modal {
+        right: 50%;
+        width: 100%;
+    }
+    .category_modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 5%;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+
+        .modal_body {
+            position: relative;
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                background-color: #fff;
+                max-width: 1024px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    // ...............Popular..............
+    #popular-modal {
+        right: 50%;
+        width: 100%;
+    }
+    .popular_modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 5%;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+
+        .modal_body {
+            position: relative;
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                background-color: #fff;
+                max-width: 1024px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    // ...............CTA..............
+    #cta-modal {
+        right: 50%;
+        width: 100%;
+    }
+    .cta_modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 5%;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+
+        .modal_body {
+            position: relative;
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                background-color: #fff;
+                max-width: 1024px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    // ...............Concerns..............
+    #concern-modal {
+        right: 50%;
+        width: 100%;
+    }
+    .concern_modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 5%;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+
+        .modal_body {
+            position: relative;
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                background-color: #fff;
+                max-width: 1024px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    // ...............Alumni..............
+    #alumni-modal {
+        right: 50%;
+        width: 100%;
+    }
+    .alumni_modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 5%;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity linear 0.2s;
+
+        .modal_body {
+            position: relative;
+            .table_card {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                background-color: #fff;
+                max-width: 1024px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-decoration: none;
+            color: #000;
+        }
     }
 }
