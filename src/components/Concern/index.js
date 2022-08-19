@@ -64,7 +64,7 @@ function Concern() {
                         <div className="img_media icon_media" id='bg'>
                             <a href='#my-modal'>
                                 <i className='btn-play'>
-                                    <FontAwesomeIcon icon={faPlay} style={{}} />
+                                    <FontAwesomeIcon icon={faPlay}  />
                                 </i>
                             </a>
                         </div>

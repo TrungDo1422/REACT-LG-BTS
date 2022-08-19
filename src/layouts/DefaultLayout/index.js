@@ -6,7 +6,7 @@ function DefaultLayout({ children }) {
     return (
         <div>
             <Header />
-            <div className="container">
+            <div >
                 <BackToTop />
                 <div className="content">{children}</div>
             </div>
