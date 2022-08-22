@@ -109,46 +109,7 @@ const Header = () => {
                 </ul>
             </nav>
         </div>
-        // <div className='admin_header'>
-        //     <Row className="" justify="space-between">
-        //         <Col lg={4} md={{ span: 4 }} sm={{ span: 12 }}>
-        //             <div className="admin_logo">
-        //                 <img alt="" src="https://devplus.edu.vn/assets/images/devplus/Artboard_2.png" />
-        //             </div>
-        //         </Col>
-        //         <Col lg={20}>
-        //             <div className="admin_navList">
-        //                 <ul>
-        //                     <li>
-        //                         <a className="home_link" href="/">
-        //                             HOME
-        //                         </a>
-        //                     </li>
-        //                     <li>
-        //                         <a className="user_link" href="# ">
-        //                             USER
-        //                         </a>
-        //                     </li>
-
-
-        //                 </ul>
-        //             </div>
-        //             <div className="right_header">
-        //                 <Row gutter={[8, 8]}>
-        //                     <Col span={12}>
-        //                         <FontAwesomeIcon icon={faUser} />
-        //                     </Col>
-        //                     <Col span={12}>
-        //                     <p>hello admin</p>
-        //                     </Col>
-
-
-        //                 </Row>
-
-        //             </div>
-        //         </Col>
-        //     </Row>
-        // </div>
+    
     )
 }
 
