@@ -3,14 +3,10 @@ import { useState } from 'react';
 import BannerForm from '../fromInput/bannerForm';
 
 
-
-
-
-
 const Banner = (props) => {
 
     const [edit, setEdit] = useState(false);
-
+ 
 
     return (
         <div className='pd-50'>

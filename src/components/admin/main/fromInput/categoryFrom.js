@@ -1,18 +1,18 @@
 import { HighlightOffSharp, SaveSharp } from '@material-ui/icons';
 import React, { useState } from 'react';
-import categoryApi from '~/api/categoryApi';
+import categoryApi from '~/api/categoriesApi'
 
 
 const CategoryForm = ({ setEdit, id }) => {
     const initState = {
         title: "",
         content: "",
-        description: ""
+        categories: []
 
 
     };
     const [categoryData, setCategoryData] = useState(initState);
-    const { title, content, description } = categoryData;
+    const { title, content, categories } = categoryData;
 
 
 
@@ -25,7 +25,7 @@ const CategoryForm = ({ setEdit, id }) => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const res = await categoryApi.patch({ id, title, content, description });
+        const res = await categoryApi({ id, title, content, categories });
         setCategoryData({
             ...categoryData,
             res
@@ -36,13 +36,14 @@ const CategoryForm = ({ setEdit, id }) => {
 
     return (
         <div>
+            <strong>Categories</strong>
             <form
                 className='mt-4 form-group'
                 onSubmit={onSubmit}
             >
                 <input
                     type='text'
-                    placeholder='Enter title'
+                    placeholder='Enter category title'
                     className='form-control'
                     id="title"
                     name="title"
@@ -52,7 +53,7 @@ const CategoryForm = ({ setEdit, id }) => {
                 />
                 <hr />
                 <input type='text'
-                    placeholder='Enter title !'
+                    placeholder='Enter content!'
                     className='form-control'
                     id="content"
                     name="content"
@@ -61,15 +62,15 @@ const CategoryForm = ({ setEdit, id }) => {
                     onChange={onInputChange}
                 />
                 <hr />
-                <input type='text'
-                    placeholder='Enter description !'
-                    className='form-control'
-                    id="description"
-                    name="description"
-                    value={description}
-                    required
-                    onChange={onInputChange}
-                />
+
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Categories</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
                 <hr />
                 <button className='btn btn-primary col-6'
                     type='submit'

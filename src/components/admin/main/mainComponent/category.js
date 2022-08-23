@@ -1,5 +1,5 @@
+import { Delete, EditTwoTone } from '@material-ui/icons';
 import React, { useState } from 'react';
-import { Delete, Close, EditTwoTone } from '@material-ui/icons'
 import CategoryForm from '../fromInput/categoryFrom';
 
 
@@ -32,11 +32,22 @@ const Category = (props) => {
                         <ul>
                           {
                             item?.categories?.map((c, index) => (
-                              <li key={index}>
-                                <p>{c.content}</p>
-                                <p>{c.course}</p>
-                                <img src={c.iconUrl} alt="" />
-                              </li>
+                              <ul className='border m-1' key={index}>
+                                <li>  <img src={c.iconUrl} alt="" style={{ width: '25px', height: '25px' }} /></li>
+                                <li> <strong>{c.content}</strong> </li>
+                                <li> <small>{c.course}</small></li>
+                                <li><small>{c.course}</small></li>
+                                <li>
+                                  <button
+                                    className="size-40 btn btn-outline-info p-1"
+                                    onClick={() => setEdit(true)}
+                                  >
+                                    <EditTwoTone />
+                                  </button>
+
+                                  <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
+                                </li>
+                              </ul>
                             ))
                           }
                         </ul>
@@ -56,7 +67,7 @@ const Category = (props) => {
                   </tbody>
                 </table>
                 <div className="border">
-                  {edit && <CategoryForm setEdit={setEdit} datas={props.data.about} id={item._id} />}
+                  {edit && <CategoryForm setEdit={setEdit}  id={item._id} />}
                 </div>
               </div>
 

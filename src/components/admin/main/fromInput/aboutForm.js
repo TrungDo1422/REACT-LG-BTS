@@ -33,6 +33,7 @@ const AboutForm = ({ setEdit, id }) => {
 
     return (
         <div>
+            <strong>About</strong>
             <form
                 className='mt-4 form-group'
                 onSubmit={onSubmit}

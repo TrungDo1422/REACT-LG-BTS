@@ -1,40 +1,73 @@
-import React from 'react';
-import Image from '~/assets/image/devplus/logo_loading.png';
+import React, { useState } from 'react';
+import { Delete, EditTwoTone, Add } from '@material-ui/icons';
 
 
-const Concern = () => {
+
+const Concern = (props) => {
+
+  const [edit, setEdit] = useState(false);
+
+
   return (
-    <div>
-      <div className='m-4 p-2 border' id='concern'>
+    <div className='pd-50'>
+      <div className='concern_card border' id='concern'>
         <h3 className='text-info'>Concern manager</h3>
-        <div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Content</th>
-                <th scope="col">Description</th>
-                <th scope="col">Images</th>
-                <th scope="col text-center">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>hihi</td>
-                <td>hihi</td>
-                <td>hihi</td>
-                <td>
-                  <img src={Image} alt='# ' />
-                </td>
-                <td>
-                  <button className='btn btn-primary'>Create</button>|
-                  <button className='btn btn-secondary'>Update</button>|
-                  <button className='btn btn-danger'>Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        {
+          props.data?.faq?.map((item, index) => (
+            <div key={index} className='faq'>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col" className='text-center'>Title</th>
+                    <th scope="col" className='text-center'>Video link</th>
+                    <th scope="col" className='text-center'>Faq</th>
+                    <th scope="col" className='text-center'>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td >{item.title}</td>
+                    <td >{item.linkVideo}</td>
+                    <td >
+                      {
+                        item?.faq?.map((i, index) => (
+                          <>
+                            <ul key={index}>
+                              <li ><strong>{i.content}</strong></li>
+                              <li ><small>{i.description}</small></li>
+                              <li >
+                                <button
+                                  className="size-40 btn btn-outline-info p-1"
+                                  onClick={() => setEdit(true)}
+                                >
+                                  <Add/>
+                                </button>
+
+                                <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
+                              </li>
+                            </ul>
+                          </>
+                        ))
+                      }
+                    </td>
+                    <td>
+                      <button
+                        className="size-40 btn btn-outline-info p-1"
+                        onClick={() => setEdit(true)}
+                      >
+                        <EditTwoTone />
+                      </button>
+
+                      <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          ))
+        }
       </div>
     </div>
   )

@@ -38,6 +38,7 @@ const BannerForm = ({ setEdit, id, datas }) => {
 
     return (
         <div className='bg-lightblue'>
+             <strong>Banner</strong>
             <form
                 className='mt-4 form-group'
                 onSubmit={onSubmit}
