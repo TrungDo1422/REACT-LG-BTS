@@ -1,10 +1,7 @@
+
 import { Delete, EditTwoTone } from '@material-ui/icons';
 import { useState } from 'react';
 import BannerForm from '../fromInput/bannerForm';
-
-
-
-
 
 
 const Banner = (props) => {

@@ -8,6 +8,7 @@ const Cta = () => {
             <div className='m-4 p-2 border' id='cta'>
                 <h3 className='text-info'>CTA manager</h3>
                 <div>
+
                     <table className="table">
                         <thead>
                             <tr>
