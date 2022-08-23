@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import './main.scss';
-import Banner from './mainComponent/banner'
-import About from './mainComponent/about'
-import Category from './mainComponent/category'
-import Popular from './mainComponent/popular'
-import Cta from './mainComponent/cta'
-import Concern from './mainComponent/concern'
-import Alumni from './mainComponent/alumni';
-import bannerApi from '~/api/bannerApi'
+import React, { useEffect, useState } from 'react';
 import aboutApi from '~/api/aboutApi';
+import bannerApi from '~/api/bannerApi';
+import categoryApi from '~/api/categoryApi';
+import './main.scss';
+import About from './mainComponent/about';
+import Alumni from './mainComponent/alumni';
+import Banner from './mainComponent/banner';
+import Category from './mainComponent/category';
+import Concern from './mainComponent/concern';
+import Cta from './mainComponent/cta';
+import Popular from './mainComponent/popular';
 
 
 
@@ -16,17 +17,15 @@ import aboutApi from '~/api/aboutApi';
 const Main = () => {
     const [bannerDatas, setBannerDatas] = useState([]);
     const [aboutDatas, setAboutDatas] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [categoryDatas, setCategoryDatas] = useState([]);
 
 
 
     useEffect(() => {
         const fetchBanner = async () => {
             try {
-                setLoading(false)
                 const response = await bannerApi.getAll();
                 setBannerDatas(response)
-                setLoading(true)
             } catch (error) {
                 console.log('Failed to fetch banner list: ', error);
             }
@@ -44,19 +43,31 @@ const Main = () => {
             } catch (error) {
                 console.log('Failed to fetch about list: ', error);
             }
-
         }
         fetchAbout();
+    }, []);
+    //Category----------------
+    useEffect(() => {
+        const fetchCategori = async () => {
+            try {
+                const response = await categoryApi.getAll();
+                setCategoryDatas(response)
+            } catch (error) {
+                console.log('Failed to fetch category list: ', error);
+            }
+        }
+        fetchCategori();
     }, []);
     return (
         <div>
             <div className="content-wrapper">
                 <div className='modal_container' id='exit'>
                     <div className='mt-50 text-center h1 '>Data management</div>
-                    <Banner data={bannerDatas} loading={loading} />
+                    <Banner data={bannerDatas} />
                     |
                     <About data={aboutDatas} />
-                    <Category />
+                    |
+                    <Category data={categoryDatas} />
                     <Popular />
                     <Cta />
                     <Concern />
