@@ -1,12 +1,12 @@
 import axiosClient from './axiosClient';
-const popularApi = {
+const categoriesApi = {
     getAll: (params) => {
-        const url = '/popular';
+        const url = '/categories';
         return axiosClient.get(url, { params });
     },
     update: (id) => {
-        const url = `/popular/${id}`;
+        const url = `/categories/${id}`;
         return axiosClient.patch(url);
     },
 };
-export default popularApi;
+export default categoriesApi;

@@ -1,12 +1,12 @@
 import axiosClient from './axiosClient';
-const popularApi = {
+const headerApi = {
     getAll: (params) => {
-        const url = '/popular';
+        const url = '/header';
         return axiosClient.get(url, { params });
     },
     update: (id) => {
-        const url = `/popular/${id}`;
+        const url = `/header/${id}`;
         return axiosClient.patch(url);
     },
 };
-export default popularApi;
+export default headerApi;
