@@ -5,7 +5,7 @@ import categoryApi from '~/api/categoryApi';
 import './main.scss';
 import About from './mainComponent/about';
 import Alumni from './mainComponent/alumni';
-import Banner from './mainComponent/banner';
+import Banner from './mainComponent/';
 import Category from './mainComponent/category';
 import Concern from './mainComponent/concern';
 import Cta from './mainComponent/cta';
