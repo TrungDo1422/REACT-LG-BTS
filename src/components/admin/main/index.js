@@ -20,7 +20,6 @@ const Main = () => {
     const [categoryDatas, setCategoryDatas] = useState([]);
 
 
-
     useEffect(() => {
         const fetchBanner = async () => {
             try {
@@ -61,8 +60,9 @@ const Main = () => {
     return (
         <div>
             <div className="content-wrapper">
-                <div className='modal_container' id='exit'>
-                    <div className='mt-50 text-center h1 '>Data management</div>
+
+                <div className='admin_content '>
+                    <div className='m-5' />
                     <Banner data={bannerDatas} />
                     |
                     <About data={aboutDatas} />

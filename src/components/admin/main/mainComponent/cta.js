@@ -1,13 +1,12 @@
 import React from 'react';
 import Image from '~/assets/image/devplus/logo_loading.png';
 
-
 const Cta = () => {
     return (
-        <div className='cta_modal' id='cta-modal'>
-            <div className='modal_body'>
-                <a className='close-btn' href='#exit'>&times;</a>
-                <div className='table_card'>
+        <div>
+            <div className="m-4 p-2 border" id="cta">
+                <h3 className="text-info">CTA manager</h3>
+                <div>
                     <table className="table">
                         <thead>
                             <tr>
@@ -20,14 +19,14 @@ const Cta = () => {
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src={Image} alt='# ' />
+                                    <img src={Image} alt="# " />
                                 </td>
                                 <td>helo man</td>
                                 <td>hihi</td>
                                 <td>
-                                    <button className='btn btn-primary'>Create</button>|
-                                    <button className='btn btn-secondary'>Update</button>|
-                                    <button className='btn btn-danger'>Delete</button>
+                                    <button className="btn btn-primary">Create</button>|
+                                    <button className="btn btn-secondary">Update</button>|
+                                    <button className="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -35,6 +34,6 @@ const Cta = () => {
                 </div>
             </div>
         </div>
-    )
-}
-export default Cta
+    );
+};
+export default Cta;
