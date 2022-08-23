@@ -103,11 +103,6 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                {/* footer end */}
-                {/* start scrollUp  */}
-                <a href="#top" className="to-top">
-                    <i className="fa-solid fa-angle-up" />
-                </a>
             </>
         </div>
     );
