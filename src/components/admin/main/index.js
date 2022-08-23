@@ -18,7 +18,7 @@ const Main = () => {
     const [bannerDatas, setBannerDatas] = useState([]);
     const [aboutDatas, setAboutDatas] = useState([]);
     const [categoryDatas, setCategoryDatas] = useState([]);
- 
+
 
     useEffect(() => {
         const fetchBanner = async () => {
@@ -61,7 +61,7 @@ const Main = () => {
         <div>
             <div className="content-wrapper">
                 <div className='admin_content '>
-                    <div className='m-5'/>
+                    <div className='m-5' />
                     <Banner data={bannerDatas} />
                     <About data={aboutDatas} />
                     <Category data={categoryDatas} />
