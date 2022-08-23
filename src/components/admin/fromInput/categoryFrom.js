@@ -29,7 +29,7 @@ const CategoryForm = ({ setEdit, id }) => {
         setCategoryData({
             ...categoryData,
             res
-        })
+        }) 
         setEdit(false)
     }
 
