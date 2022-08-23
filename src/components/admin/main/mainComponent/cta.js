@@ -4,10 +4,11 @@ import Image from '~/assets/image/devplus/logo_loading.png';
 
 const Cta = () => {
     return (
-        <div className='cta_modal' id='cta-modal'>
-            <div className='modal_body'>
-                <a className='close-btn' href='#exit'>&times;</a>
-                <div className='table_card'>
+        <div>
+            <div className='m-4 p-2 border' id='cta'>
+                <h3 className='text-info'>CTA manager</h3>
+                <div>
+
                     <table className="table">
                         <thead>
                             <tr>

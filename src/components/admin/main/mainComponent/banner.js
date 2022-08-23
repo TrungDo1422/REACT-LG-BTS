@@ -1,73 +1,58 @@
-import { Close, Delete, EditTwoTone } from '@material-ui/icons';
+
+import { Delete, EditTwoTone } from '@material-ui/icons';
 import { useState } from 'react';
 import BannerForm from '../fromInput/bannerForm';
 
-const Banner = (props, loading) => {
 
-    const [showmodal, setShowModal] = useState(false);
+const Banner = (props) => {
+
     const [edit, setEdit] = useState(false);
 
 
-    const handlemodal = () => {
-        setShowModal(true);
-    }
-
-    const closeModal = () => {
-        setShowModal(false);
-    }
-
-
     return (
-        <div>
-            <div className={`overlay ${!showmodal ? `overlay-none` : ``}`}>
-                <div className="content">
-                    {
-                        loading &&
-                        props.data.banner?.map((item, index) => (
-                            <div key={index}>
-                                <div className="modal-body">
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Title</th>
-                                                <th scope="col">Content</th>
-                                                <th scope="col">Action</th>
+        <div className='pd-50'>
+            <div className='banner_card border' id='banner'>
+                <h3 className='text-info'>Banner manager</h3>
+                {
+                    props.data.banner?.map((item, index) => (
+                        <div key={index}>
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col text">Title</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">Action</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>{item.title}</td>
-                                                <td>{item.content}</td>
-                                                <td>
-                                                    <button
-                                                        className="btn btn-outline-info p-1"
-                                                        onClick={() => setEdit(true)}
-                                                    >
-                                                        <EditTwoTone />
-                                                    </button>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{item.title}</td>
+                                        <td>{item.content}</td>
+                                        <td>
+                                            <button
+                                                className="size-40 btn btn-outline-info p-1"
+                                                onClick={() => setEdit(true)}
+                                            >
+                                                <EditTwoTone />
+                                            </button>
 
-                                                    <button className='btn btn-danger col-6 p-1'><Delete /></button>
+                                            <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
 
-                                                    {edit && <BannerForm setEdit={setEdit} datas={props.data.banner} id={item._id} />}
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
 
-                                </div>
-                                <div className="modal-footer">
-                                    <button onClick={closeModal} className="btn btn-danger">
-                                        <Close />
-                                    </button>
-                                </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div className='border'>
+                                {edit && <BannerForm setEdit={setEdit} datas={props.data.banner} id={item._id} />}
+
                             </div>
-                        ))
-                    }
-                </div>
-            </div>
-            <button onClick={handlemodal} className="btn btn-primary">Open banner</button>
+                        </div>
 
+                    ))
+                }
+            </div>
         </div>
     )
 }
