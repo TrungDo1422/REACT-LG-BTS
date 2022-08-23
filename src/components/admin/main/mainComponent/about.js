@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import BannerForm from '../fromInput/bannerForm'
+import AboutForm from '../fromInput/aboutForm'
 import { Delete, Close, EditTwoTone } from '@material-ui/icons'
 
 function About(props) {
   const [showmodal, setShowModal] = useState(false);
 
   const [edit, setEdit] = useState(false);
-
-
 
   const handlemodal = () => {
     setShowModal(true);
@@ -51,7 +49,7 @@ function About(props) {
 
                           <button className='btn btn-danger col-6 p-1'><Delete /></button>
 
-                          {edit && <BannerForm setEdit={setEdit} datas={props.data.banner} id={item.id} />}
+                          {edit && <AboutForm setEdit={setEdit} datas={props.data.about} id={item._id} />}
                         </td>
                       </tr>
                     </tbody>
