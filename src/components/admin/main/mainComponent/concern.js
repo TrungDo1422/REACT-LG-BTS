@@ -4,11 +4,10 @@ import Image from '~/assets/image/devplus/logo_loading.png';
 
 const Concern = () => {
   return (
-
-    <div className='concern_modal' id='concern-modal'>
-      <div className='modal_body'>
-        <a className='close-btn' href='#exit'>&times;</a>
-        <div className='table_card'>
+    <div>
+      <div className='m-4 p-2 border' id='concern'>
+        <h3 className='text-info'>Concern manager</h3>
+        <div>
           <table className="table">
             <thead>
               <tr>
