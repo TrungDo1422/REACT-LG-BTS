@@ -3,9 +3,9 @@ import Main from '~/components/admin/main';
 
 const Admin = () => {
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <div className='admin'>
-                <Main />
+                {/* <Main /> */}
             </div>
 
         </div>
