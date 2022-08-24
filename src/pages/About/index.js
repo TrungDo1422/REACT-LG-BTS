@@ -1,6 +1,6 @@
 import { Delete, EditTwoTone } from '@material-ui/icons'
 import React, { useState, useEffect } from 'react';
-import AboutForm from '../../components/admin/fromInput/aboutForm';
+import AboutForm from '../../components/admin/aboutForm';
 import aboutApi from '~/api/aboutApi'
 import './about.scss'
 

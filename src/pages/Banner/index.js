@@ -2,7 +2,7 @@ import './banner.scss'
 import React, { useEffect, useState } from 'react';
 import bannerApi from '~/api/bannerApi';
 import { Delete, EditTwoTone } from '@material-ui/icons';
-import BannerForm from '../../components/admin/fromInput/bannerForm'
+import BannerForm from '../../components/admin/bannerForm'
 
 
 const Banner = () => {

@@ -1,7 +1,8 @@
 import './popular.scss'
 import React, { useEffect, useState } from 'react';
 import { Delete, EditTwoTone, Add } from '@material-ui/icons';
-
+import popularForm from '../../components/admin/popularFrom'
+import { Col, Row, Card } from 'antd';
 import popularApi from '~/api/popularApi';
 
 
@@ -37,31 +38,31 @@ const Popular = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Popular: </h5>
-                  {
-                    item?.popular?.map((p, index) => (
-                      <div className='d-flex justify-content-between' key={index}>
-                        <div class="card p-2 m-3 col" style={{ width: '12rem' }} >
-                          <img class="card-img-top" src={p.imgUrl} alt="Card image cap" />
-                          <div class="card-body">
-                            <p style={{ fontSize: '1rem' }} className="card-text">{p.content}</p>
-                            <div className="card-footer d-flex justify-content-center">
-                              <div>
-                                <button className='size-40 btn btn-primary col-6 p-1'>< Add /></button>
-                                <button
-                                  className="size-40 btn btn-outline-info p-1"
-                                  onClick={() => setEdit(true)}
-                                >
-                                  <EditTwoTone />
-                                </button>
 
-                                <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
-                              </div>
-                            </div>
+                  <Row gutter={[32, 32]}>
+                    {item.popular?.map((item, index) => (
+                      <Col md={12} lg={8} sm={24} xs={24} className="pr-pl">
+                        <Card className="card-item" hoverable cover={<img src={item.imgUrl} alt="#" />}>
+                          <div className="textCard">
+                            <span>{item.content}</span>
                           </div>
-                        </div>
-                      </div>
-                    ))
-                  }
+                          <div>
+                            <button className='size-40 btn btn-primary col-6 p-1'>< Add /></button>
+                            <button
+                              className="size-40 btn btn-outline-info p-1"
+                              onClick={() => setEdit(true)}
+                            >
+                              <EditTwoTone />
+                            </button>
+
+                            <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
+                          </div>
+                        </Card>
+                      </Col>
+                    ))}
+
+                  </Row>
+
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import './category.scss'
 import { Delete, EditTwoTone, Add } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
-import CategoryForm from '../../components/admin/fromInput/categoryFrom';
+import CategoryForm from '../../components/admin/categoryFrom';
 import categoriesApi from '~/api/categoriesApi';
 
 
@@ -35,8 +35,10 @@ const Category = () => {
               <div className="card">
                 <div className='d-flex p-4 m-2 justify-content-between'>
                   <div className='m-2'>
-                    <strong>Title: </strong>
-                    <smail>{item.title}</smail>
+                    <h4>{item.title}</h4>
+                    <div>
+                      {edit && <CategoryForm setEdit={setEdit} title={item.title} id={item._id} content={item.content} />}
+                    </div>
                   </div>
                   <div className='m-2'>
                     <button
@@ -45,8 +47,6 @@ const Category = () => {
                     >
                       <EditTwoTone />
                     </button>
-
-                    <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
                   </div>
 
                 </div>
@@ -60,25 +60,26 @@ const Category = () => {
                           <p className='m-10'>{c.course}</p>
                         </div>
                         <div className='m-2'>
-                          <button
-                            className="size-40 btn btn-outline-info p-1"
-                            onClick={() => setEdit(true)}
-                          >
-                            <Add />
-                          </button>
-                          <button className='size-40 btn btn-warning col-6 p-1'><EditTwoTone /></button>
-                          <button className='size-40 btn btn-danger col-6 p-1'><Delete /></button>
                         </div>
                       </div>
                     ))
                   }
                 </ul>
 
-                <div className="border">
-                  {edit && <CategoryForm setEdit={setEdit} data={categoryDatas.categories} id={item._id} />}
+                <div className='d-flex p2 justify-content-between'>
+                  <div className='m-2'>
+                    <button
+                      className="size-40 btn btn-outline-info p-1"
+                      onClick={() => setEdit(true)}
+                    >
+                      <Add />
+                    </button>
+                  </div>
+                  <div className='m-2'>
+                    <button className='size-40 btn btn-danger p-1'><Delete /></button>
+                  </div>
                 </div>
               </div>
-
             </div>
           ))
         }
