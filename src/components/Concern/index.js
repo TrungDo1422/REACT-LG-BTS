@@ -8,10 +8,10 @@ import './concern.scss';
 const { Panel } = Collapse;
 
 function Concern(props) {
-    const [color, setColor] = useState('#226fb7');
+    const [colors, setColors] = useState('#226fb7');
     const onChange = (key, color) => {
         console.log(key);
-        setColor('#fff');
+        setColors('#fff');
     };
 
     return (
@@ -35,7 +35,7 @@ function Concern(props) {
                                             header={item.content}
                                             // key={item._id}
                                             className="item"
-                                            style={{ background: color }}
+                                            style={{ background: colors }}
                                         >
                                             <p>{item.description}</p>
                                         </Panel>
