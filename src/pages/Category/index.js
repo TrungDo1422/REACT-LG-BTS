@@ -11,6 +11,8 @@ const Category = () => {
 
   const [edit, setEdit] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const fetchCategori = async () => {
       try {
@@ -23,12 +25,26 @@ const Category = () => {
     }
     fetchCategori();
   }, []);
+  useEffect(() => {
+    if (loading) {
+      const fetchCategori = async () => {
+        try {
+          const response = await categoriesApi.getAll();
+          setCategoryDatas(response)
+          console.log(response.categories)
+        } catch (error) {
+          console.log('Failed to fetch category list: ', error);
+        }
+      }
+      fetchCategori();
+    }
+    setLoading(false);
+  }, [loading]);
 
   return (
     <div className='pd-50 '>
       <h2 className='text-drak text-center'>Categories manager</h2>
       <div className='category_card' id='category'>
-
         {
           categoryDatas?.categories?.map((item, index) => (
             <div key={index}>
@@ -37,7 +53,13 @@ const Category = () => {
                   <div className='m-2'>
                     <h4>{item.title}</h4>
                     <div>
-                      {edit && <CategoryForm setEdit={setEdit} title={item.title} id={item._id} content={item.content} />}
+                      {edit &&
+                        <CategoryForm
+                          setEdit={setEdit}
+                          id={item._id}
+                          title={item.title}
+                          setLoading={setLoading}
+                        />}
                     </div>
                   </div>
                   <div className='m-2'>

@@ -9,6 +9,7 @@ import './about.scss'
 const About = () => {
     const [aboutDatas, setAboutDatas] = useState([]);
     const [edit, setEdit] = useState(false);
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -22,6 +23,23 @@ const About = () => {
         }
         fetchAbout();
     }, []);
+
+
+    useEffect(() => {
+        if (loading) {
+            const fetchAbout = async () => {
+                try {
+                    const response = await aboutApi.getAll();
+                    setAboutDatas(response)
+                } catch (error) {
+                    console.log('Failed to fetch about list: ', error);
+                }
+            }
+            fetchAbout();
+            setLoading(false)
+        }
+    }, [loading])
+
     return (
         <div className='pd-50'>
             <h3 className='text-drak'>About manage</h3>
@@ -62,7 +80,16 @@ const About = () => {
 
                                 <div className='border'>
 
-                                    {edit && <AboutForm setEdit={setEdit} datas={aboutDatas.about} id={item._id} />}
+                                    {
+                                        edit &&
+                                        <AboutForm setEdit={setEdit}
+                                            title={item.title}
+                                            description={item.description}
+                                            content={item.content}
+                                            id={item._id}
+                                            setLoading={setLoading}
+                                        />
+                                    }
 
                                 </div>
                             </div>

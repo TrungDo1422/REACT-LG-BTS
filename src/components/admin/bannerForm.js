@@ -31,7 +31,7 @@ const BannerForm = ({ setLoading, setEdit, id, title, content }) => {
         event.preventDefault();
         const res = await bannerApi.patch({ id, title: titleInput, content: contentInput });
         setBannerData({
-            ...bannerData, content: contentInput, title: titleInput,
+            ...bannerData,
             res
         })
         setEdit(false)
