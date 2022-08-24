@@ -3,6 +3,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Col, Drawer, Image, Row } from 'antd';
 import React, { useState } from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 function Header({ header, navbar }) {
     const [visible, setVisible] = useState(false);
@@ -33,9 +34,9 @@ function Header({ header, navbar }) {
                             <div className="header-menu">
                                 <ul>
                                     <li>
-                                        <a className="header-menu-home" href="/">
+                                        <Link className="header-menu-home" to={'/'}>
                                             HOME
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
                                         <a href="# ">ABOUT DEVPLUS</a>
@@ -49,10 +50,10 @@ function Header({ header, navbar }) {
                                         <div className="header-submenu">
                                             <ul className="header-submenu-list">
                                                 <li>
-                                                    <a href="/onePlus">One Plus Campus</a>
+                                                    <Link to={'/onePlus'}>One Plus Campus</Link>
                                                 </li>
                                                 <li>
-                                                    <a href="/twoPlus">Two Plus Campus</a>
+                                                    <Link to={'/twoPlus'}>Two Plus Campus</Link>
                                                 </li>
                                                 <li>
                                                     <a href="/threePlus">Three Plus Campus</a>
@@ -64,9 +65,9 @@ function Header({ header, navbar }) {
                                         <a href="# ">DEVPLUS ACTIVITIES</a>
                                     </li>
                                     <li>
-                                        <a className="" href="/admin">
+                                        <Link className="" to={'/admin'}>
                                             ADMIN MANAGE
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
