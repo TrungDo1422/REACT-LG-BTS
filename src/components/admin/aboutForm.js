@@ -1,41 +1,39 @@
 import { HighlightOffSharp, SaveSharp } from '@material-ui/icons';
 import React, { useState } from 'react';
-import categoryApi from '~/api/categoryApi';
+import aboutApi from '~/api/aboutApi';
 
 
-const CategoryForm = ({ setEdit, id }) => {
+const AboutForm = ({ setEdit, id }) => {
     const initState = {
         title: "",
         content: "",
-        description: ""
-
+        description :""
+        
 
     };
-    const [categoryData, setCategoryData] = useState(initState);
-    const { title, content, description } = categoryData;
+    const [aboutData, setAboutData] = useState(initState);
+    const { title, content , description} = aboutData;
 
 
 
 
     const onInputChange = (e) => {
         const { name, value } = e.target;
-        setCategoryData({ ...categoryData, [name]: value });
+        setAboutData({ ...aboutData, [name]: value });
     };
 
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const res = await categoryApi.patch({ id, title, content, description });
-        setCategoryData({
-            ...categoryData,
-            res
-        })
+        const res = await aboutApi.patch({ id, title, content , description});
+        setAboutData({ ...aboutData, res })
         setEdit(false)
     }
 
 
     return (
         <div>
+            <strong>About</strong>
             <form
                 className='mt-4 form-group'
                 onSubmit={onSubmit}
@@ -89,4 +87,4 @@ const CategoryForm = ({ setEdit, id }) => {
     )
 }
 
-export default CategoryForm
+export default AboutForm

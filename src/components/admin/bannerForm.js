@@ -4,65 +4,66 @@ import bannerApi from '~/api/bannerApi';
 
 
 
-const BannerForm = ({ setEdit, id, datas }) => {
+const BannerForm = ({ setLoading, setEdit, id, title, content }) => {
     const initState = {
-        title: "",
-        content: ""
+        title: title,
+        content: content
+    };
+
+    const [bannerData, setBannerData] = useState(initState);
+    const [titleInput, setTitleInput] = useState(title);
+    const [contentInput, setContentInput] = useState(content);
+
+
+
+    const onTitleInputChange = (event) => {
+        setTitleInput(event.target.value)
+       
 
     };
-    const [bannerData, setBannerData] = useState(initState);
-    const { title, content } = bannerData;
+    const onContentInputChange = (event) => {
+        setContentInput(event.target.value);
 
-
-
-    useEffect(() => {
-        setBannerData(datas);
-    }, [datas]);
-
-    const onInputChange = (e) => {
-        const { name, value } = e.target;
-        setBannerData({ ...bannerData, [name]: value });
     };
 
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const res = await bannerApi.patch({ id, title, content });
+        const res = await bannerApi.patch({ id, title: titleInput, content: contentInput });
         setBannerData({
-            ...bannerData,
+            ...bannerData, content: contentInput, title: titleInput,
             res
         })
         setEdit(false)
+        setLoading(true)
     }
 
-
     return (
-        <div>
+        <div className='bg-lightblue'>
             <form
                 className='mt-4 form-group'
                 onSubmit={onSubmit}
             >
+
                 <input
                     type='text'
-                    placeholder='Enter title'
-                    className='form-control'
+                    className='form-control mb-4'
                     id="title"
                     name="title"
-                    value={title}
+                    value={titleInput}
                     required
-                    onChange={onInputChange}
+                    onChange={onTitleInputChange}
                 />
-                <hr />
+
                 <input type='text'
-                    placeholder='Enter title !'
-                    className='form-control'
+                    className='form-control mb-4'
                     id="content"
                     name="content"
-                    value={content}
+                    value={contentInput}
                     required
-                    onChange={onInputChange}
+                    onChange={onContentInputChange}
                 />
-                <hr />
+
                 <button className='btn btn-primary col-6'
                     type='submit'
 
