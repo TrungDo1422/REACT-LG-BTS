@@ -3,7 +3,7 @@ import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icon
 import React, { useState, useEffect } from 'react';
 import categoriesApi from '~/api/categoriesApi';
 import axiosClient from '~/api/axiosClient';
-import { Input } from 'antd';
+import { Input, Button } from 'antd';
 
 const Category = () => {
     const [category, setCategory] = useState([]);
@@ -99,7 +99,7 @@ const Category = () => {
         setTrangthai(true);
     };
     const renderInfor = (
-        <div className="pd-50">
+        <div className="pd-20">
             <h3 className="text-drak">About manage</h3>
             <div className="about_card border" id="about">
                 <div>
@@ -162,13 +162,13 @@ const Category = () => {
                     <Input type="text" placeholder="Enter course:" onChange={(e) => onCourseChange(e)}></Input>
                     <div className="file-upload">
                         <CloudUploadOutlined />
-                        <input
+                        <Input
                             type="file"
                             onChange={onFileChosen}
                             name="FileAttachment"
                             id="FileAttachment"
                             className="upload"
-                        ></input>
+                        ></Input>
                     </div>
                 </div>
             </div>
@@ -203,51 +203,43 @@ const Category = () => {
                                         />
                                         <div className="file-upload">
                                             <ion-icon name="camera-outline"></ion-icon>
-                                            <input
+                                            <Input
                                                 type="file"
                                                 onChange={onFileChosen}
                                                 name="FileAttachment"
                                                 id="FileAttachment"
                                                 className="upload"
-                                            ></input>
+                                            ></Input>
                                         </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <Input
                                             onChange={(e) => onContentChange(e)}
                                             type="text"
                                             name=""
                                             id=""
                                             defaultValue={activeItem.content}
-                                        ></input>
+                                        ></Input>
                                     </td>
                                     <td>
-                                        <input
+                                        <Input
                                             onChange={(e) => onCourseChange(e)}
                                             type="text"
                                             name=""
                                             id=""
                                             defaultValue={activeItem.course}
-                                        ></input>
+                                        ></Input>
                                     </td>
                                 </tr>
                                 <div className="edit-infor">
                                     <form action="" onClick={updateInfor}>
-                                        <button
-                                            type="submit"
-                                            onClick={(e) => submitUpdate(e)}
-                                            style={{ marginLeft: '-73px', marginTop: '5px' }}
-                                        >
+                                        <Button className="Button" type="primary" onClick={(e) => submitUpdate(e)}>
                                             Update
-                                        </button>
+                                        </Button>
+                                        <Button type="primary" danger onClick={updateInfor}>
+                                            Close
+                                        </Button>
                                     </form>
-                                    <button
-                                        type="submit"
-                                        onClick={updateInfor}
-                                        style={{ marginLeft: '-73px', marginTop: '5px' }}
-                                    >
-                                        Close
-                                    </button>
                                 </div>
                             </tbody>
                         </table>
