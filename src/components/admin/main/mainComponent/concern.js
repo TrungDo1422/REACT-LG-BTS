@@ -4,6 +4,7 @@ import Image from '~/assets/image/devplus/logo_loading.png';
 
 const Concern = () => {
   return (
+
     <div>
       <div className='m-4 p-2 border' id='concern'>
         <h3 className='text-info'>Concern manager</h3>

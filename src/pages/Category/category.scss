@@ -1,0 +1,52 @@
+.category_card {
+    .size-40 {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+    }
+    .m-10 {
+        margin: 10px;
+    }
+    .text-14 {
+        font-size: 16px;
+    }
+}
+.pd-50 {
+    padding: 50px;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+}
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px !important;
+    background: #ffffff;
+    text-transform: uppercase;
+    font-size: 13px;
+    border: none !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    text-shadow: none;
+    padding: 5px 10px !important;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 29%;
+}
+// .file-upload ion-icon {
+//     color: black;
+//     font-size: 150%;
+// }
+.file-upload input.upload {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // margin: 0;
+    // padding: 0;
+    // font-size: 20px;
+    cursor: pointer;
+    // opacity: 0;
+    // filter: alpha(opacity=0);
+}

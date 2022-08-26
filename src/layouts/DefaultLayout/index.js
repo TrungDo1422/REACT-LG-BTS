@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 import BackToTop from './BackToTop';
 import Footer from './Footer';
 import Header from './Header';
-import headerApi from '~/api/headerApi';
+import menuImgApi from '~/api/menuImgApi';
 import navbarAPi from '~/api/navbarAPi';
 
 function DefaultLayout({ children }) {
-    const [header, setHeader] = useState([]);
+    const [menuImg, setMenuImg] = useState([]);
     const [navbar, setNavbar] = useState([]);
 
     useEffect(() => {
         const fetchBannerData = async () => {
             try {
-                const response = await headerApi.getAll();
+                const response = await menuImgApi.getAll();
 
-                setHeader(response);
+                setMenuImg(response);
             } catch (error) {
                 console.log('Failed to fetch banner list: ', error);
             }
@@ -35,7 +35,7 @@ function DefaultLayout({ children }) {
     }, []);
     return (
         <div>
-            <Header header={header} navbar={navbar}/>
+            <Header menuImg={menuImg} navbar={navbar} />
             <div>
                 <BackToTop />
                 <div className="content">{children}</div>

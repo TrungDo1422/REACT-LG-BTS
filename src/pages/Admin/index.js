@@ -1,16 +1,13 @@
 import React from 'react';
 import Main from '~/components/admin/main';
-import Header from '~/components/admin/header';
-import Layouts from '~/layouts/DefaultLayout/LayoutsAdmin';
+import Header from '~/layouts/DefaultLayout/Header';
 
 const Admin = () => {
     return (
         <div className="wrapper">
             <div className="admin">
-                <Layouts>
-                    <Header />
-                    <Main />
-                </Layouts>
+                <Header />
+                <Main />
             </div>
         </div>
     );

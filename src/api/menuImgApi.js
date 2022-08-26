@@ -1,12 +1,12 @@
 import axiosClient from './axiosClient';
-const headerApi = {
+const menuImgApi = {
     getAll: (params) => {
-        const url = '/header';
+        const url = '/uploadImg';
         return axiosClient.get(url, { params });
     },
     update: (id) => {
-        const url = `/header/${id}`;
+        const url = `/uploadImg/${id}`;
         return axiosClient.patch(url);
     },
 };
-export default headerApi;
+export default menuImgApi;
