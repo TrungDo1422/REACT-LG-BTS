@@ -28,6 +28,7 @@ const items = [
     getItem(<Link to="/admin/cta">CTA</Link>, '5', <BarChartOutlined />),
     getItem(<Link to="/admin/navbar">navbar</Link>, '6', <CloudOutlined />),
     getItem(<Link to="/admin/alumni">Alumni</Link>, '7', <FileOutlined />),
+    getItem(<Link to="/admin/concern">Concern</Link>, '8', <FileOutlined />),
 ];
 
 const AdminLayout = ({ children }) => {

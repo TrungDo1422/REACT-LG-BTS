@@ -29,6 +29,7 @@ const publicRoutes = [
     { path: config.routes.cta, component: Cta, layout: '2' },
     { path: config.routes.alumni, component: Alumni, layout: '2' },
     { path: config.routes.navBar, component: NavBar, layout: '2' },
+    { path: config.routes.concern, component: Concern, layout: '2' },
     { path: config.routes.notFound, component: NotFound, layout: null },
 ];
 

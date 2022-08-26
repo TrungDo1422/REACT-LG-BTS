@@ -6,7 +6,6 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 
 function Header({ menuImg, navbar }) {
-    console.log(menuImg);
     const [visible, setVisible] = useState(false);
     const [imageVisible, setImageVisible] = useState(false);
     const [sidebar, setSidebar] = useState(false);

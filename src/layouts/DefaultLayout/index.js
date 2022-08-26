@@ -12,6 +12,15 @@ function DefaultLayout({ children }) {
     useEffect(() => {
         const fetchBannerData = async () => {
             try {
+                const response = await navbarApi.getAll();
+
+                setNavbar(response);
+            } catch (error) {
+                console.log('Failed to fetch banner list: ', error);
+            }
+        };
+        const fetchImageData = async () => {
+            try {
                 const response = await menuImgApi.getAll();
 
                 setMenuImg(response);
@@ -20,18 +29,7 @@ function DefaultLayout({ children }) {
             }
         };
         fetchBannerData();
-    }, []);
-    useEffect(() => {
-        const fetchBannerData = async () => {
-            try {
-                const response = await navbarApi.getAll();
-
-                setNavbar(response);
-            } catch (error) {
-                console.log('Failed to fetch banner list: ', error);
-            }
-        };
-        fetchBannerData();
+        fetchImageData();
     }, []);
     return (
         <div>
