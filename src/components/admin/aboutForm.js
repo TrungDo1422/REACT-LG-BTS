@@ -3,31 +3,37 @@ import React, { useState } from 'react';
 import aboutApi from '~/api/aboutApi';
 
 
-const AboutForm = ({ setEdit, id }) => {
+const AboutForm = ({ setLoading, setEdit, id, title, content, description }) => {
     const initState = {
-        title: "",
-        content: "",
-        description :""
-        
-
+        title: title,
+        content: content,
+        description: description
     };
     const [aboutData, setAboutData] = useState(initState);
-    const { title, content , description} = aboutData;
+
+    const [titleInput, setTitleInput] = useState(title);
+    const [contentInput, setContentInput] = useState(content);
+    const [descInput, setDescInput] = useState(description);
 
 
 
-
-    const onInputChange = (e) => {
-        const { name, value } = e.target;
-        setAboutData({ ...aboutData, [name]: value });
+    const onTitleInputChange = (e) => {
+        setTitleInput(e.target.value);
+    };
+    const onContentInputChange = (e) => {
+        setContentInput(e.target.value);
+    };
+    const onDescInputChange = (e) => {
+        setDescInput(e.target.value);
     };
 
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const res = await aboutApi.patch({ id, title, content , description});
+        const res = await aboutApi.updateAbout({ id, title: titleInput, content: contentInput, description: descInput });
         setAboutData({ ...aboutData, res })
         setEdit(false)
+        setLoading(true)
     }
 
 
@@ -44,9 +50,9 @@ const AboutForm = ({ setEdit, id }) => {
                     className='form-control'
                     id="title"
                     name="title"
-                    value={title}
+                    value={titleInput}
                     required
-                    onChange={onInputChange}
+                    onChange={onTitleInputChange}
                 />
                 <hr />
                 <input type='text'
@@ -54,9 +60,9 @@ const AboutForm = ({ setEdit, id }) => {
                     className='form-control'
                     id="content"
                     name="content"
-                    value={content}
+                    value={contentInput}
                     required
-                    onChange={onInputChange}
+                    onChange={onContentInputChange}
                 />
                 <hr />
                 <input type='text'
@@ -64,9 +70,9 @@ const AboutForm = ({ setEdit, id }) => {
                     className='form-control'
                     id="description"
                     name="description"
-                    value={description}
+                    value={descInput}
                     required
-                    onChange={onInputChange}
+                    onChange={onDescInputChange}
                 />
                 <hr />
                 <button className='btn btn-primary col-6'

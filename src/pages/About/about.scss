@@ -1,9 +1,29 @@
  //About---------------------
- .about_card {
+ .about-container{
     .size-40 {
+        padding: 5px;
         width: 40px;
         height: 40px;
         margin: 5px;
+    }
+    .modal-body{
+        .title_text{
+            font-size: 24px;
+        }
+        .content_text{
+            font-size: 16px;
+        }
+        .title_desc{
+            font-size: 14px;
+        }
+    }
+    .notice{
+        .stt_text{
+            font-size: 16px;
+        }
+        .desc_text{
+            font-size: 14px;
+        }
     }
 }
 .pd-50 {

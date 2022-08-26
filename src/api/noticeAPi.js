@@ -8,5 +8,13 @@ const noticeApi = {
         const url = `/notice/${id}`;
         return axiosClient.patch(url);
     },
+    createNotice: async({ stt, description }) => {
+        const url = '/notice/create';
+        return  await axiosClient.post(url, {stt, description });
+    },
+    deleteNotice: async ({ id }) => {
+        const url = `/notice/delete/${id}`;
+        return await axiosClient.delete(url, { id });
+    }
 };
 export default noticeApi;

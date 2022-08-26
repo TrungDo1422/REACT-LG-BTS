@@ -1,21 +1,22 @@
 .concern_card {
     .size-40 {
+
+        padding: 5px;
         width: 40px;
         height: 40px;
         margin: 5px;
     }
     .faq {
-        font-size: 18px;
-
-        text-align: center;
-        font-size: 14px;
         .size-30 {
             width: 30px;
             height: 30px;
         }
-        .w350 {
-            width: 350px;
-        }
+       .text-content{
+        font-size: 18px;
+       }
+       .text-description{
+        font-size: 14px;
+       }
     }
 }
 .pd-50 {
