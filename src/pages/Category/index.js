@@ -24,7 +24,7 @@ const Category = () => {
             }
         };
         fetchCategory();
-    }, []);
+    }, [activeItem]);
 
     const onFileChosen = async (e) => {
         // var formData = FormData();
