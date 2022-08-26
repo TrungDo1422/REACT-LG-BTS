@@ -11,25 +11,20 @@ import Concern from './mainComponent/concern';
 import Cta from './mainComponent/cta';
 import Popular from './mainComponent/popular';
 
-
-
-
 const Main = () => {
     const [bannerDatas, setBannerDatas] = useState([]);
     const [aboutDatas, setAboutDatas] = useState([]);
     const [categoryDatas, setCategoryDatas] = useState([]);
 
-
     useEffect(() => {
         const fetchBanner = async () => {
             try {
                 const response = await bannerApi.getAll();
-                setBannerDatas(response)
+                setBannerDatas(response);
             } catch (error) {
                 console.log('Failed to fetch banner list: ', error);
             }
-
-        }
+        };
         fetchBanner();
     }, []);
 
@@ -38,11 +33,11 @@ const Main = () => {
         const fetchAbout = async () => {
             try {
                 const response = await aboutApi.getAll();
-                setAboutDatas(response)
+                setAboutDatas(response);
             } catch (error) {
                 console.log('Failed to fetch about list: ', error);
             }
-        }
+        };
         fetchAbout();
     }, []);
     //Category----------------
@@ -50,19 +45,18 @@ const Main = () => {
         const fetchCategori = async () => {
             try {
                 const response = await categoryApi.getAll();
-                setCategoryDatas(response)
+                setCategoryDatas(response);
             } catch (error) {
                 console.log('Failed to fetch category list: ', error);
             }
-        }
+        };
         fetchCategori();
     }, []);
     return (
         <div>
             <div className="content-wrapper">
-
-                <div className='admin_content '>
-                    <div className='m-5' />
+                <div className="admin_content ">
+                    <div className="m-5" />
                     <Banner data={bannerDatas} />
                     |
                     <About data={aboutDatas} />
@@ -75,7 +69,7 @@ const Main = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Main
+export default Main;
