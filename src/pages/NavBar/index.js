@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import navbarApi from '~/api/navbarApi';
-import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icons';
+import navbarApi from '../../api/navbarAPi';
+import {  EditTwoTone } from '@material-ui/icons';
 import axiosClient from '~/api/axiosClient';
 import { Input, Button } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
