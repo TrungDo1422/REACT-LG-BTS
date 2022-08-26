@@ -15,9 +15,7 @@ const CTA = (props) => {
                         <div className="desc_content">
                             <div className="sec-title mb-40">
                                 <h2 className="title_Desc">{item.title}</h2>
-                                {item.cta.map((item) => (
                                     <div className="description_text">{item.content}</div>
-                                ))}
                             </div>
                             <a className="btn_Apply" href="https://stunited.typeform.com/registration" target="_blank">
                                 Apply Now

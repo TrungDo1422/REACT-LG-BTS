@@ -4,9 +4,9 @@ const ctaApi = {
         const url = '/cta';
         return axiosClient.get(url, { params });
     },
-    update: (id) => {
-        const url = `/cta/${id}`;
-        return axiosClient.patch(url);
+    update: ({ id, title, imgUrl }) => {
+        const url = `/cta/update/${id}`;
+        return axiosClient.patch(url, { id, title, imgUrl });
     },
 };
 export default ctaApi;

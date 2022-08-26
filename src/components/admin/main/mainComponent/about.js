@@ -1,45 +1,16 @@
+import React, { useState } from 'react';
+import AboutForm from '../fromInput/aboutForm';
 import { Delete, EditTwoTone } from '@material-ui/icons';
-import React, { useState, useEffect } from 'react';
-import AboutForm from '../../components/admin/aboutForm';
-import aboutApi from '~/api/aboutApi';
-import './about.scss';
 
-const About = () => {
-    const [aboutDatas, setAboutDatas] = useState([]);
+function About(props) {
     const [edit, setEdit] = useState(false);
-    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const fetchAbout = async () => {
-            try {
-                const response = await aboutApi.getAll();
-                setAboutDatas(response);
-            } catch (error) {
-                console.log('Failed to fetch about list: ', error);
-            }
-        };
-        fetchAbout();
-    }, []);
-
-    useEffect(() => {
-        if (loading) {
-            const fetchBanner = async () => {
-                try {
-                    const response = await aboutApi.getAll();
-                    setAboutDatas(response);
-                } catch (error) {
-                    console.log('Failed to fetch banner list: ', error);
-                }
-            };
-            fetchBanner();
-            setLoading(false);
-        }
-    }, [loading]);
+    // console.log(props.data)
     return (
         <div className="pd-50">
-            <h3 className="text-drak">About manage</h3>
             <div className="about_card border" id="about">
-                {aboutDatas.about?.map((item, index) => (
+                <h3 className="text-info">About manage</h3>
+                {props.data.about?.map((item, index) => (
                     <div key={index}>
                         <div className="modal-body">
                             <table className="table table-striped">
@@ -75,13 +46,7 @@ const About = () => {
                             </table>
 
                             <div className="border">
-                                {edit && (
-                                    <AboutForm
-                                        setLoading={setLoading}
-                                        setEdit={setEdit}
-                                        id={item._id}
-                                    />
-                                )}
+                                {edit && <AboutForm setEdit={setEdit} datas={props.data.about} id={item._id} />}
                             </div>
                         </div>
                     </div>
@@ -89,6 +54,6 @@ const About = () => {
             </div>
         </div>
     );
-};
+}
 
 export default About;
