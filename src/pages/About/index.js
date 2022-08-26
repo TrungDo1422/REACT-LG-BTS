@@ -71,7 +71,6 @@ const About = () => {
     useEffect(() => {
         const fetchNotice = async () => {
             try {
-
                 const response = await noticeApi.getAll();
                 setNoticeDatas(response)
             } catch (error) {
@@ -79,13 +78,12 @@ const About = () => {
             }
         }
         fetchNotice();
-    }, []);
+    }, [noticeDatas]);
 
     useEffect(() => {
         if (loading) {
             const fetchNotice = async () => {
                 try {
-
                     const response = await noticeApi.getAll();
                     setNoticeDatas(response)
                 } catch (error) {
@@ -141,11 +139,10 @@ const About = () => {
             res,
         });
         setLoading(true)
-        setOnCreate(false)
+        setNoticeCreate(false)
     }
     const handleNoticeDelete = async (item) => {
         const newID = { id: item._id }
-        console.log(newID)
         await noticeApi.deleteNotice(newID);
         setLoading(true);
     }

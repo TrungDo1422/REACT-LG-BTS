@@ -58,7 +58,6 @@ const Banner = () => {
     };
 
     const onSubmit = async(event) => {
-        setLoading(false)
         event.preventDefault();
         const res = await bannerApi.createBanner({ title, content });
         setBannerDatas({
@@ -89,12 +88,12 @@ const Banner = () => {
                                         </div>
                                         <div className='col-2'>
                                             <button
-                                                className="size-40 btn btn-outline-info p-1"
+                                                className="size-40 btn btn-outline-info "
                                                 onClick={() => setOnEdit(true)}
                                             >
                                                 <EditTwoTone />
                                             </button>
-                                            <button onClick={() => handleDelete(item)} className='size-40 btn btn-danger col-4 p-1'><Delete /></button>
+                                            <button onClick={() => handleDelete(item)} className='size-40 btn btn-danger'><Delete /></button>
                                         </div>
                                     </div>
                                 </li>
