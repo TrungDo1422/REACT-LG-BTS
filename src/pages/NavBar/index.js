@@ -1,15 +1,14 @@
-import './category.scss';
-import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
-import categoriesApi from '~/api/categoriesApi';
+import navbarApi from '~/api/navbarApi';
+import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icons';
 import axiosClient from '~/api/axiosClient';
 import { Input, Button } from 'antd';
+import TextArea from 'antd/lib/input/TextArea';
 
-const Category = () => {
-    const [category, setCategory] = useState([]);
+const NavBar = () => {
+    const [navbar, setNavar] = useState([]);
     const [trangthai, setTrangthai] = useState(true);
     const [contentInput, setContentInput] = useState('');
-    const [courseInput, setCourseInput] = useState('');
     const [activeItem, setActiveItem] = useState({});
     const [imageFile, setImageFile] = useState('');
 
@@ -19,21 +18,19 @@ const Category = () => {
 
     const fetchCategory = async () => {
         try {
-            const response = await categoriesApi.getAll();
-            response.categories && setCategory(response.categories);
-            console.log(response.categories);
+            const response = await navbarApi.getAll();
+            response.navbar && setNavar(response.navbar);
+            console.log(response.navbar);
         } catch (error) {
             console.log('Failed to fetch banner list: ', error);
         }
     };
 
-
     const onFileChosen = async (e) => {
         var imagefile = e.target.files[0];
         setImageFile(imagefile);
         const objectUrl = URL.createObjectURL(imagefile);
-        setActiveItem({ ...activeItem, iconUrl: objectUrl });
-
+        setActiveItem({ ...activeItem, map: objectUrl });
     };
 
     const submitUpdate = async (e) => {
@@ -47,13 +44,11 @@ const Category = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
         }
-        const res = await categoriesApi.patch({
+        const res = await navbarApi.patch({
             id: activeItem._id,
-            iconUrl: response ? response.url : activeItem.iconUrl,
+            map: response ? response.url : activeItem.map,
             content: contentInput,
-            course: courseInput,
         });
         fetchCategory();
     };
@@ -69,31 +64,27 @@ const Category = () => {
                 },
             });
         }
-        const res = await categoriesApi.post({
-            iconUrl: response
+        const res = await navbarApi.post({
+            map: response
                 ? response.url
                 : 'https://res.cloudinary.com/lg-btg/image/upload/v1661498453/image-uploader/bc3fzetpvfisqanxfkum.jpg',
             content: contentInput,
-            course: courseInput,
         });
         console.log(res);
         fetchCategory();
     };
-    const deleteClick = async (id, e) => {
-        e.preventDefault();
-        await categoriesApi.delete({ id });
-        fetchCategory();
-    };
+    // const deleteClick = async (id, e) => {
+    //     e.preventDefault();
+    //     await navbarApi.delete({ id });
+    //     fetchCategory();
+    // };
 
     const onContentChange = (e) => {
         setContentInput(e.target.value);
     };
-    const onCourseChange = (e) => {
-        setCourseInput(e.target.value);
-    };
+
     const editClick = (item) => {
         setContentInput(item.content);
-        setCourseInput(item.course);
 
         setActiveItem(item);
         setTrangthai(!trangthai);
@@ -101,28 +92,26 @@ const Category = () => {
     const updateInfor = () => {
         setTrangthai(true);
     };
-
     const renderInfor = (
-        <div className="pd-20">
-            <h3 className="text-drak">About manage</h3>
+        <div className="pd-50">
+            <h3 className="text-drak">NavBar manage</h3>
             <div className="about_card border" id="about">
                 <div>
                     <div className="modal-body">
                         <table className="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">icons</th>
+                                    <th scope="col">Map</th>
                                     <th scope="col">Content</th>
-                                    <th scope="col">course</th>
-                                    <th scope="col">action</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                            {category.map((item, index) => (
+                            {navbar.map((item, index) => (
                                 <tbody key={index}>
                                     <tr>
                                         <td>
                                             <img
-                                                src={item.iconUrl}
+                                                src={item.map}
                                                 alt=""
                                                 className="avatar"
                                                 name="image"
@@ -130,8 +119,6 @@ const Category = () => {
                                             />
                                         </td>
                                         <td>{item.content}</td>
-                                        <td>{item.course}</td>
-
                                         <td>
                                             <div className="edit-infor">
                                                 <button
@@ -141,30 +128,37 @@ const Category = () => {
                                                 >
                                                     <EditTwoTone />
                                                 </button>
-                                                <button
+                                                {/* <button
                                                     className="size-40 btn btn-danger col-6 p-1"
                                                     type="submit"
                                                     onClick={(e) => deleteClick(item._id, e)}
                                                 >
                                                     <Delete />
-                                                </button>
+                                                </button> */}
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             ))}
                         </table>
+                        {/* <img
+                            // src={item.map}
+                            alt=""
+                            className="avatar"
+                            name="image"
+                            style={{ borderRadius: '20px' }}
+                        /> */}
                     </div>
                 </div>
             </div>
 
-            <div className="create">
-                <h3>Create New Category</h3>
+            {/* <div className="create">
+                <h3>Create New CTA</h3>
                 <div className="create-item">
+                    <label>Enter title:</label>
+                    <Input type="text" placeholder="Enter content:" onChange={(e) => onTitleChange(e)}></Input>
                     <label>Enter content:</label>
                     <Input type="text" placeholder="Enter content:" onChange={(e) => onContentChange(e)}></Input>
-                    <label>Enter course:</label>
-                    <Input type="text" placeholder="Enter course:" onChange={(e) => onCourseChange(e)}></Input>
                     <div className="file-upload">
                         <CloudUploadOutlined />
                         <Input
@@ -179,28 +173,27 @@ const Category = () => {
             </div>
             <button className="size-40 btn btn-danger col-6 p-1" type="submit" onClick={(e) => submitPost(e)}>
                 <Add />
-            </button>
+            </button> */}
         </div>
     );
     const renderUpdate = (
         <div className="pd-50">
-            <h3 className="text-drak">About manage</h3>
+            <h3 className="text-drak">NavBar manage</h3>
             <div className="about_card border" id="about">
                 <div>
                     <div className="modal-body">
                         <table className="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">icons</th>
+                                    <th scope="col">Map</th>
                                     <th scope="col">Content</th>
-                                    <th scope="col">course</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
                                         <img
-                                            src={activeItem.iconUrl}
+                                            src={activeItem.map}
                                             alt=""
                                             className="avatar"
                                             name="image"
@@ -218,30 +211,29 @@ const Category = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <Input
+                                        <TextArea
                                             onChange={(e) => onContentChange(e)}
                                             type="text"
                                             name=""
                                             id=""
                                             defaultValue={activeItem.content}
-                                        ></Input>
-                                    </td>
-                                    <td>
-                                        <Input
-                                            onChange={(e) => onCourseChange(e)}
-                                            type="text"
-                                            name=""
-                                            id=""
-                                            defaultValue={activeItem.course}
-                                        ></Input>
+                                        ></TextArea>
                                     </td>
                                 </tr>
                                 <div className="edit-infor">
-                                    <form action="" onClick={updateInfor}>
-                                        <Button className="Button" type="primary" onClick={(e) => submitUpdate(e)}>
+                                <form action="" onClick={updateInfor}>
+                                        <Button
+                                            className="Button"
+                                            type="primary"
+                                            onClick={(e) => submitUpdate(e)}
+                                        >
                                             Update
                                         </Button>
-                                        <Button type="primary" danger onClick={updateInfor}>
+                                        <Button
+                                            type="primary"
+                                            danger
+                                            onClick={updateInfor}
+                                        >
                                             Close
                                         </Button>
                                     </form>
@@ -257,12 +249,11 @@ const Category = () => {
     return (
         <div className="profile">
             <div className="title">
-                <h4>Category Information</h4>
+                <h4>NavBar Information</h4>
             </div>
             <hr />
             {trangthai ? renderInfor : renderUpdate}
         </div>
     );
 };
-
-export default Category;
+export default NavBar;

@@ -1,12 +1,11 @@
-import './category.scss';
 import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
-import categoriesApi from '~/api/categoriesApi';
+import testimonialApi from '~/api/testimonialApi';
 import axiosClient from '~/api/axiosClient';
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
 
-const Category = () => {
-    const [category, setCategory] = useState([]);
+const Alumni = () => {
+    const [alumni, setAlumni] = useState([]);
     const [trangthai, setTrangthai] = useState(true);
     const [contentInput, setContentInput] = useState('');
     const [courseInput, setCourseInput] = useState('');
@@ -19,21 +18,19 @@ const Category = () => {
 
     const fetchCategory = async () => {
         try {
-            const response = await categoriesApi.getAll();
-            response.categories && setCategory(response.categories);
-            console.log(response.categories);
+            const response = await testimonialApi.getAll();
+            response.testimonial && setAlumni(response.testimonial);
+            console.log(response);
         } catch (error) {
             console.log('Failed to fetch banner list: ', error);
         }
     };
-
 
     const onFileChosen = async (e) => {
         var imagefile = e.target.files[0];
         setImageFile(imagefile);
         const objectUrl = URL.createObjectURL(imagefile);
         setActiveItem({ ...activeItem, iconUrl: objectUrl });
-
     };
 
     const submitUpdate = async (e) => {
@@ -47,9 +44,8 @@ const Category = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
         }
-        const res = await categoriesApi.patch({
+        const res = await testimonialApi.patch({
             id: activeItem._id,
             iconUrl: response ? response.url : activeItem.iconUrl,
             content: contentInput,
@@ -69,7 +65,7 @@ const Category = () => {
                 },
             });
         }
-        const res = await categoriesApi.post({
+        const res = await testimonialApi.post({
             iconUrl: response
                 ? response.url
                 : 'https://res.cloudinary.com/lg-btg/image/upload/v1661498453/image-uploader/bc3fzetpvfisqanxfkum.jpg',
@@ -81,7 +77,7 @@ const Category = () => {
     };
     const deleteClick = async (id, e) => {
         e.preventDefault();
-        await categoriesApi.delete({ id });
+        await testimonialApi.delete({ id });
         fetchCategory();
     };
 
@@ -101,9 +97,8 @@ const Category = () => {
     const updateInfor = () => {
         setTrangthai(true);
     };
-
     const renderInfor = (
-        <div className="pd-20">
+        <div className="pd-50">
             <h3 className="text-drak">About manage</h3>
             <div className="about_card border" id="about">
                 <div>
@@ -111,27 +106,28 @@ const Category = () => {
                         <table className="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">icons</th>
-                                    <th scope="col">Content</th>
-                                    <th scope="col">course</th>
+                                    <th scope="col">content</th>
+                                    <th scope="col">avataUrl</th>
+                                    <th scope="col">name</th>
+                                    <th scope="col">Plus</th>
                                     <th scope="col">action</th>
                                 </tr>
                             </thead>
-                            {category.map((item, index) => (
+                            {alumni.map((item, index) => (
                                 <tbody key={index}>
                                     <tr>
+                                        <td>{item.content}</td>
                                         <td>
                                             <img
-                                                src={item.iconUrl}
+                                                src={item.avataUrl}
                                                 alt=""
                                                 className="avatar"
                                                 name="image"
                                                 style={{ borderRadius: '20px' }}
                                             />
                                         </td>
-                                        <td>{item.content}</td>
-                                        <td>{item.course}</td>
-
+                                        <td>{item.name}</td>
+                                        <td>{item.Plus}</td>
                                         <td>
                                             <div className="edit-infor">
                                                 <button
@@ -238,13 +234,19 @@ const Category = () => {
                                 </tr>
                                 <div className="edit-infor">
                                     <form action="" onClick={updateInfor}>
-                                        <Button className="Button" type="primary" onClick={(e) => submitUpdate(e)}>
+                                        <button
+                                            type="submit"
+                                            onClick={(e) => submitUpdate(e)}
+                                        >
                                             Update
-                                        </Button>
-                                        <Button type="primary" danger onClick={updateInfor}>
-                                            Close
-                                        </Button>
+                                        </button>
                                     </form>
+                                    <button
+                                        type="submit"
+                                        onClick={updateInfor}
+                                    >
+                                        Close
+                                    </button>
                                 </div>
                             </tbody>
                         </table>
@@ -265,4 +267,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default Alumni;
