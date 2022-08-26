@@ -9,7 +9,7 @@ const { Panel } = Collapse;
 
 function Concern(props) {
     const [colors, setColors] = useState('#226fb7');
-    const onChange = (key, color) => {
+    const onChange = (key) => {
         console.log(key);
         setColors('#fff');
     };
@@ -26,14 +26,12 @@ function Concern(props) {
                             {props.concern.faq?.map((item) => (
                                 <Collapse
                                     accordion
-                                    // defaultActiveKey={item._id[1]}
                                     onChange={onChange}
-                                    className="list_collapse"
+                                    className="list_collapse "
                                 >
                                     <Panel
                                         header={item.content}
-                                        // key={item._id}
-                                        className="item"
+                                        className="item p-2"
                                         style={{ background: colors }}
                                     >
                                         <p>{item.description}</p>

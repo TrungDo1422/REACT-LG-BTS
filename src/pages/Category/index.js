@@ -27,11 +27,13 @@ const Category = () => {
         }
     };
 
+
     const onFileChosen = async (e) => {
         var imagefile = e.target.files[0];
         setImageFile(imagefile);
         const objectUrl = URL.createObjectURL(imagefile);
         setActiveItem({ ...activeItem, iconUrl: objectUrl });
+
     };
 
     const submitUpdate = async (e) => {
@@ -45,6 +47,7 @@ const Category = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+
         }
         const res = await categoriesApi.patch({
             id: activeItem._id,
@@ -98,6 +101,7 @@ const Category = () => {
     const updateInfor = () => {
         setTrangthai(true);
     };
+
     const renderInfor = (
         <div className="pd-20">
             <h3 className="text-drak">About manage</h3>
@@ -127,6 +131,7 @@ const Category = () => {
                                         </td>
                                         <td>{item.content}</td>
                                         <td>{item.course}</td>
+
                                         <td>
                                             <div className="edit-infor">
                                                 <button
