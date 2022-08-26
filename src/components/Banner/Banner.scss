@@ -7,6 +7,7 @@
     background-position: center;
     z-index: -1;
 }
+
 #slider .text-content {
     /* position: absolute; */
 
@@ -15,17 +16,17 @@
     text-align: center;
     font-size: 45px;
 }
+
 #slider .text-heading {
     color: #ffffff;
     font-weight: 700;
     line-height: 66px;
-    font-size: 55px;
-
     text-align: center !important;
     text-transform: capitalize;
     margin: 0 0 16px;
     font-family: 'Nunito', sans-serif;
 }
+
 #slider .text-description {
     color: #505050;
     font-size: 20px;
@@ -33,6 +34,7 @@
     margin: 0px 0px 35px;
     text-align: center;
 }
+
 #slider .btn-learn-more {
     background: #ff5421;
     color: #ffffff;
@@ -46,10 +48,12 @@
     text-align: center;
     display: inline-block;
 }
+
 #slider .btn-learn-more:hover {
     cursor: pointer;
     background: #ff914d;
 }
+
 #slider .banner-style-custom {
     color: #ffffff;
     // background: #ff5421;
@@ -63,12 +67,14 @@
 .capitalize {
     text-transform: capitalize !important;
 }
+
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
     }
+
     100% {
         opacity: 1;
         -webkit-transform: none;
@@ -106,32 +112,43 @@
         -webkit-transform: translate3d(0, 100%, 0);
         transform: translate3d(0, 100%, 0);
     }
+
     100% {
         opacity: 1;
         -webkit-transform: none;
         transform: none;
     }
 }
+
 @media only screen and (max-width: 1200px) {
+
     .text-heading {
         font-size: 45px;
     }
 }
+
 @media only screen and (max-width: 1085px) {
+    #slider .text-content {
+        max-width: 700px;
+    }
+
     .text-heading {
         font-size: 45px;
     }
 }
+
 @media only screen and (max-width: 991px) {
     .text-heading {
         font-size: 40px;
     }
 }
+
 @media (max-width: 768px) {
     .text-heading {
         font-size: 35px;
     }
 }
+
 @media only screen and (max-width: 576px) {
     .text-heading {
         font-size: 30px;
@@ -139,7 +156,20 @@
 }
 
 @media only screen and (max-width: 481px) {
+    #slider .text-content {
+        max-width: 400px;
+        margin: 0 20px;
+
+        >h2 {
+            line-height: 40px;
+        }
+    }
+
     .text-heading {
         font-size: 25px;
+    }
+
+    #slider .btn-learn-more {
+        padding: 16px 30px;
     }
 }

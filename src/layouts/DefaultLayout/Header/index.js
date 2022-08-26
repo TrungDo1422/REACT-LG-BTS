@@ -149,15 +149,6 @@ function Header({ header, navbar }) {
                                         </Col>
                                     ))}
 
-                                    {/* <Image
-                                preview={{
-                                    visible: false,
-                                }}
-                                width={200}
-                                src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp"
-                                onClick={() => setVisible(true)}
-                            /> */}
-
                                     <img
                                         className="navbar-map"
                                         alt=""
@@ -168,7 +159,6 @@ function Header({ header, navbar }) {
                                         alt=""
                                         src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Facebook%2BIcon%2BBlack.png"
                                     />
-                                    {/* <FontAwesomeIcon icon="fa-brands fa-facebook-f" /> */}
                                 </Row>
                             </div>
                         ))}

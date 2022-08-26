@@ -7,9 +7,11 @@
     .list_container {
         background-color: #f9f8f8;
         padding: 30px;
+
         .list_collapse {
             border: none;
             outline: none;
+
             .item {
                 font-family: 'Nunito', sans-serif;
                 font-weight: 700;
@@ -17,13 +19,16 @@
                 font-size: 18px;
                 border-radius: 5px;
                 margin-bottom: 20px;
+                color: #ffffff;
 
                 & p {
                     font-weight: 400;
                     font-size: 16px;
                 }
+
                 & :focus {
                     background-color: #226fb7;
+                    color: #ffffff;
                 }
             }
         }
@@ -41,6 +46,7 @@
             animation-delay: 200ms;
             animation-name: fadeInUp;
         }
+
         .icon_media {
             position: relative;
 
@@ -55,6 +61,7 @@
                 background: #226fb7;
                 border-radius: 100%;
                 color: #ffffff;
+
                 & i {
                     line-height: 70px;
                     top: 50%;
@@ -62,6 +69,7 @@
                     transform: translate(-50%, -50%);
                 }
             }
+
             & a:hover::before {
                 content: '';
                 position: absolute;
@@ -81,14 +89,17 @@
                     opacity: 0.8;
                     background-color: #226fb7;
                 }
+
                 to {
                     transform: scale(2);
                     opacity: 0;
                 }
             }
+
             .animate-delay-01s {
                 --animate-delay: 0.1s;
             }
+
             .animate-delay-02s {
                 --animate-delay: 0.2s;
             }
@@ -97,6 +108,7 @@
 
     .modal_container {
         position: relative;
+
         #my-modal {
             right: 50%;
             background-color: rgba(0, 0, 0, 0.371);
@@ -133,11 +145,13 @@
                 text-decoration: none;
                 color: #000;
             }
+
             & iframe {
                 width: 800px;
                 height: 450px;
             }
         }
+
         @media only screen and (max-width: 1080px) {
             .modal {
                 & iframe {
@@ -146,6 +160,7 @@
                 }
             }
         }
+
         @media only screen and (max-width: 768px) {
             .modal {
                 & iframe {
@@ -154,12 +169,24 @@
                 }
             }
         }
+
         @media only screen and (max-width: 576px) {
             .modal {
                 & iframe {
-                    width: 350px;
-                    height: 200px;
+                    width: 390px;
+                    height: auto;
+                    object-fit: cover;
                 }
+            }
+
+            .ques_title {
+                h2 {
+                    font-size: 10px;
+                }
+            }
+
+            .img_media {
+                min-height: 400px;
             }
         }
     }

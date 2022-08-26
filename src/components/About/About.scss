@@ -10,6 +10,7 @@
     border-radius: 5px;
     margin-top: -60px;
     position: absolute;
+    overflow: hidden;
 }
 
 .about-subtitle {
@@ -48,6 +49,7 @@
 
 .about-road {
     margin-top: -60px;
+    padding-left: 50px;
     position: absolute;
     right: 10%;
 }
@@ -121,65 +123,111 @@
         transform: none;
     }
 }
+
 @media only screen and (max-width: 1200px) {
     .about {
-        margin: 0 -50px 70px -50px;
+        margin: 0 0 180px -50px;
+        padding-bottom: 50px;
+    }
+
+    .about-content {
+        margin-left: 70px;
+        margin-right: 40px;
+    }
+
+    .about-road {
+        padding-left: 20px;
+    }
+
+    .about-title h2 {
+        font-size: 36px;
     }
 }
+
 @media only screen and (max-width: 1085px) {
     .about {
-        margin: 0 -90px 70px -90px;
+        margin: 0 0 160px -50px;
+        padding: 0 30px;
     }
+
+    .about-content {
+        margin-right: 60px;
+        margin-left: 90px;
+    }
+
+    .about-road {
+        margin-top: -64px;
+    }
+
+    .about-title h2 {
+        font-size: 25px;
+    }
+
 }
+
 @media only screen and (max-width: 991px) {
     .about {
         height: auto;
         margin: 0 0px 70px 0px;
     }
+
     .about-content {
         position: static;
         left: 0%;
         right: 0%;
         margin-top: 70px;
     }
+
     .about-road {
         position: static;
         left: 0%;
         margin-top: 70px;
     }
+
     .about-road li {
         padding: 30px;
     }
-}
-@media only screen and (max-width: 1200px) {
-    .about-title h2 {
-        font-size: 36px;
-    }
-}
-@media only screen and (max-width: 1025px) {
+
     .about-title h2 {
         font-size: 25px;
     }
+
 }
-@media only screen and (max-width: 991px) {
-    .about-title h2 {
-        font-size: 25px;
-    }
-}
+
 @media (max-width: 768px) {
     .about {
         height: auto;
         margin: 0 -40px 70px -40px;
     }
+
     .about-title h2 {
         font-size: 20px;
     }
 }
+
 @media only screen and (max-width: 450px) {
     .about {
-        height: auto;
-        margin: 0 -80px 70px -80px;
+        margin: 0 0 50px -50px;
+        padding: 0 18px;
     }
+
+    .about-content {
+        margin-right: 0;
+        margin-left: 50px;
+        padding: 60px 40px 70px;
+    }
+
+    .about-road {
+        margin-top: 70px;
+        margin-left: 30px;
+
+        ul {
+            li {
+                padding: 24px 0;
+            }
+        }
+    }
+
     .about-title h2 {
         font-size: 20px;
     }

@@ -1,0 +1,70 @@
+.home {
+    display: flex;
+    height: 32px;
+    margin: 16px;
+    // background: red;
+    justify-content: center;
+        color: black; 
+    &:hover {
+        color: #1890ff;
+        cursor: pointer;
+    }
+}
+
+.home-icon {
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 12px;
+    position: relative;
+    left: 0;
+    
+}
+
+.header-logo {
+    width: 190px;
+    height: 32px;
+    margin-top: 16px;
+}
+
+.admin-title {
+    color: rgba(0, 0, 0, 0.85);
+    margin-top: 18px;
+    // margin-left: 130px;
+    font-weight: 400;
+}
+
+.trigger {
+    width: 100%;
+    background: #dee2e6;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    &:hover {
+        background: #e6f7ff;
+    }
+}
+
+.item-title {
+    font-weight: 400;
+    // margin-top: 26px;
+    // margin-left: 10px;
+}
+
+.content {
+    height: 5000px;
+    margin: 90px 0 0 200px;
+}
+
+// @media only screen and (max-width: 739px) {
+//     .sider {
+//         width: 50px;
+//     }
+//         .ant-layout-has-sider .ant-layout-sider {
+//             width: 50px;
+//         }
+//     .site-layout-background {
+//         width: 50px;
+//     }
+// }

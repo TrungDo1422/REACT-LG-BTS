@@ -93,33 +93,46 @@
         transform: none;
     }
 }
+
 @media only screen and (max-width: 1200px) {
     .categories {
         padding-left: 50px;
         padding-right: 50px;
     }
 }
+
 @media only screen and (max-width: 1025px) {
     .categories {
         padding-left: 30px;
         padding-right: 30px;
     }
 }
+
 @media only screen and (max-width: 991px) {
     .categories {
         padding-left: 30px;
         padding-right: 30px;
     }
 }
+
 @media (max-width: 768px) {
     .categories {
         padding-left: 30px;
         padding-right: 30px;
     }
 }
+
 @media only screen and (max-width: 450px) {
     .categories {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .categories-title {
+        margin-left: 10px;
+
+        h2 {
+            font-size: 26px;
+        }
     }
 }

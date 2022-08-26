@@ -206,6 +206,9 @@
 
 .header-icon-menu {
     display: none;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .navbar-submenu {
@@ -305,7 +308,6 @@
 @media only screen and (max-width: 739px) {
     .container_son {
         width: 480px;
-        overflow: hidden;
     }
 
     .header {
@@ -322,7 +324,7 @@
         display: none;
     }
 
-    .navbar-submenu {
+    .header-icon-menu .navbar-submenu {
         width: 300px;
     }
 }

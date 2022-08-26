@@ -2,12 +2,11 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 
-import { DefaultLayout } from './layouts';
 import Loading from './components/Loading';
+import DefaultLayout from './layouts/DefaultLayout';
 
 function App() {
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1000);
@@ -16,7 +15,7 @@ function App() {
 
     return (
         <Router>
-            <div >
+            <div>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
