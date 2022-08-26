@@ -3,7 +3,7 @@ import BackToTop from './BackToTop';
 import Footer from './Footer';
 import Header from './Header';
 import menuImgApi from '~/api/menuImgApi';
-import navbarApi from '~/api/navbarApi';
+import navbarApi from '../../api/navbarApi';
 
 function DefaultLayout({ children }) {
     const [menuImg, setMenuImg] = useState([]);
