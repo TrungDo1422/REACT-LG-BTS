@@ -278,10 +278,11 @@ const About = () => {
                         <div>
                             <form className="mt-4 form-group" onSubmit={onNoticeSubmit} >
                                 <input
-                                    type="text"
+                                    type="number"
                                     placeholder='Enter new title...'
                                     className="form-control mb-4"
                                     id="noticeStt"
+                                    pattern='[0-9]{0,5}'
                                     name="noticeStt"
                                     value={noticeStt}
                                     required
