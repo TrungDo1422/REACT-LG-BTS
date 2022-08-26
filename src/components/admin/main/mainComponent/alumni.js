@@ -1,12 +1,11 @@
-import './category.scss';
 import { Delete, EditTwoTone, Add, CloudUploadOutlined } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
-import categoriesApi from '~/api/categoriesApi';
+import testimonialApi from '~/api/testimonialApi';
 import axiosClient from '~/api/axiosClient';
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
 
-const Category = () => {
-    const [category, setCategory] = useState([]);
+const Alumni = () => {
+    const [alumni, setAlumni] = useState([]);
     const [trangthai, setTrangthai] = useState(true);
     const [contentInput, setContentInput] = useState('');
     const [courseInput, setCourseInput] = useState('');
@@ -19,21 +18,19 @@ const Category = () => {
 
     const fetchCategory = async () => {
         try {
-            const response = await categoriesApi.getAll();
-            response.categories && setCategory(response.categories);
-            console.log(response.categories);
+            const response = await testimonialApi.getAll();
+            response.testimonial && setAlumni(response.testimonial);
+            console.log(response);
         } catch (error) {
             console.log('Failed to fetch banner list: ', error);
         }
     };
-
 
     const onFileChosen = async (e) => {
         var imagefile = e.target.files[0];
         setImageFile(imagefile);
         const objectUrl = URL.createObjectURL(imagefile);
         setActiveItem({ ...activeItem, iconUrl: objectUrl });
-
     };
 
     const submitUpdate = async (e) => {
@@ -47,9 +44,8 @@ const Category = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
         }
-        const res = await categoriesApi.patch({
+        const res = await testimonialApi.patch({
             id: activeItem._id,
             iconUrl: response ? response.url : activeItem.iconUrl,
             content: contentInput,
@@ -69,7 +65,7 @@ const Category = () => {
                 },
             });
         }
-        const res = await categoriesApi.post({
+        const res = await testimonialApi.post({
             iconUrl: response
                 ? response.url
                 : 'https://res.cloudinary.com/lg-btg/image/upload/v1661498453/image-uploader/bc3fzetpvfisqanxfkum.jpg',
@@ -81,7 +77,7 @@ const Category = () => {
     };
     const deleteClick = async (id, e) => {
         e.preventDefault();
-        await categoriesApi.delete({ id });
+        await testimonialApi.delete({ id });
         fetchCategory();
     };
 
@@ -101,9 +97,8 @@ const Category = () => {
     const updateInfor = () => {
         setTrangthai(true);
     };
-
     const renderInfor = (
-        <div className="pd-20">
+        <div className="pd-50">
             <h3 className="text-drak">About manage</h3>
             <div className="about_card border" id="about">
                 <div>
@@ -111,41 +106,40 @@ const Category = () => {
                         <table className="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">icons</th>
-                                    <th scope="col">Content</th>
-                                    <th scope="col">course</th>
+                                    <th scope="col">content</th>
+                                    <th scope="col">avataUrl</th>
+                                    <th scope="col">name</th>
+                                    <th scope="col">Plus</th>
                                     <th scope="col">action</th>
                                 </tr>
                             </thead>
-                            {category.map((item, index) => (
+                            {alumni.map((item, index) => (
                                 <tbody key={index}>
                                     <tr>
+                                        <td>{item.content}</td>
                                         <td>
                                             <img
-                                                src={item.iconUrl}
+                                                src={item.avataUrl}
                                                 alt=""
                                                 className="avatar"
                                                 name="image"
                                                 style={{ borderRadius: '20px' }}
                                             />
                                         </td>
-                                        <td>{item.content}</td>
-                                        <td>{item.course}</td>
-
+                                        <td>{item.name}</td>
+                                        <td>{item.Plus}</td>
                                         <td>
                                             <div className="edit-infor">
                                                 <button
-                                                    className=" btn btn-outline-info p-1"
+                                                    className="size-40 btn btn-outline-info p-1"
                                                     type="submit"
                                                     onClick={() => editClick(item)}
-                                                    style={{ borderRadius: '20px', width: '40px', padding: '5px', height: '40px', margin: '5px', }}
                                                 >
                                                     <EditTwoTone />
                                                 </button>
                                                 <button
                                                     className="size-40 btn btn-danger col-6 p-1"
                                                     type="submit"
-                                                    style={{ borderRadius: '20px', width: '40px', padding: '5px', height: '40px', margin: '5px', }}
                                                     onClick={(e) => deleteClick(item._id, e)}
                                                 >
                                                     <Delete />
@@ -162,31 +156,26 @@ const Category = () => {
 
             <div className="create">
                 <h3>Create New Category</h3>
-                <div className="create-item p-2">
-                    <label >Enter content:</label>
+                <div className="create-item">
+                    <label>Enter content:</label>
                     <Input type="text" placeholder="Enter content:" onChange={(e) => onContentChange(e)}></Input>
                     <label>Enter course:</label>
                     <Input type="text" placeholder="Enter course:" onChange={(e) => onCourseChange(e)}></Input>
-                    <div className="file-upload m-3">
+                    <div className="file-upload">
                         <CloudUploadOutlined />
-                        <input
+                        <Input
                             type="file"
                             onChange={onFileChosen}
                             name="FileAttachment"
                             id="FileAttachment"
-                            className="upload btn btn-secondary"/>
+                            className="upload"
+                        ></Input>
                     </div>
-                    <button className="btn btn-primary col-6 "
-                        type="submit"
-                        onClick={(e) => submitPost(e)}
-                        style={{ width: '70px', padding: '5px', height: '45px', margin: '5px', }}
-                    >
-                        <Add />
-                    </button>
                 </div>
-
             </div>
-
+            <button className="size-40 btn btn-danger col-6 p-1" type="submit" onClick={(e) => submitPost(e)}>
+                <Add />
+            </button>
         </div>
     );
     const renderUpdate = (
@@ -195,65 +184,72 @@ const Category = () => {
             <div className="about_card border" id="about">
                 <div>
                     <div className="modal-body">
-                        <div className='d-flex p-2 justify-content-around'>
-                            <div className='col-3 m-1'>
-                                <img
-                                    src={activeItem.iconUrl}
-                                    alt=""
-                                    className="avatar"
-                                    name="image"
-                                    style={{ borderRadius: '20px', margin: '10px' }}
-                                />
-                                <div className="file-upload btn btn-secondary">
-                                    <ion-icon name="camera-outline"></ion-icon>
-                                    <input
-                                        type="file"
-                                        onChange={onFileChosen}
-                                        name="FileAttachment"
-                                        id="FileAttachment"
-                                        className="upload btn btn-light"
-                                    ></input>
-                                </div>
-                            </div>
-                            <div className='col-3 m-1'>
-                                <input
-                                    onChange={(e) => onContentChange(e)}
-                                    type="text"
-                                    defaultValue={activeItem.content}
-                                    className="form-control"
-                                />
-                            </div>
-                            <div className='col-3 m-1'>
-                                <input
-                                    onChange={(e) => onCourseChange(e)}
-                                    type="text"
-                                    defaultValue={activeItem.course}
-                                    className="form-control"
-                                />
-                            </div>
-                            <div className='col-3 m-1'>
-                                <div className="d-flex justify-content-center" >
-                                    <div onClick={updateInfor}>
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">icons</th>
+                                    <th scope="col">Content</th>
+                                    <th scope="col">course</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img
+                                            src={activeItem.iconUrl}
+                                            alt=""
+                                            className="avatar"
+                                            name="image"
+                                            style={{ borderRadius: '20px' }}
+                                        />
+                                        <div className="file-upload">
+                                            <ion-icon name="camera-outline"></ion-icon>
+                                            <Input
+                                                type="file"
+                                                onChange={onFileChosen}
+                                                name="FileAttachment"
+                                                id="FileAttachment"
+                                                className="upload"
+                                            ></Input>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <Input
+                                            onChange={(e) => onContentChange(e)}
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            defaultValue={activeItem.content}
+                                        ></Input>
+                                    </td>
+                                    <td>
+                                        <Input
+                                            onChange={(e) => onCourseChange(e)}
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            defaultValue={activeItem.course}
+                                        ></Input>
+                                    </td>
+                                </tr>
+                                <div className="edit-infor">
+                                    <form action="" onClick={updateInfor}>
                                         <button
                                             type="submit"
                                             onClick={(e) => submitUpdate(e)}
-                                            className='btn btn-info m-1 p-2'
                                         >
                                             Update
                                         </button>
-                                    </div>
-
+                                    </form>
                                     <button
                                         type="submit"
                                         onClick={updateInfor}
-                                        className='btn btn-danger  m-1 p-2'
                                     >
                                         Close
                                     </button>
-
                                 </div>
-                            </div>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -271,4 +267,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default Alumni;

@@ -3,7 +3,7 @@ import BackToTop from './BackToTop';
 import Footer from './Footer';
 import Header from './Header';
 import menuImgApi from '~/api/menuImgApi';
-import navbarAPi from '~/api/navbarAPi';
+import navbarApi from '~/api/navbarApi';
 
 function DefaultLayout({ children }) {
     const [menuImg, setMenuImg] = useState([]);
@@ -11,6 +11,15 @@ function DefaultLayout({ children }) {
 
     useEffect(() => {
         const fetchBannerData = async () => {
+            try {
+                const response = await navbarApi.getAll();
+
+                setNavbar(response);
+            } catch (error) {
+                console.log('Failed to fetch banner list: ', error);
+            }
+        };
+        const fetchImageData = async () => {
             try {
                 const response = await menuImgApi.getAll();
 
@@ -20,18 +29,7 @@ function DefaultLayout({ children }) {
             }
         };
         fetchBannerData();
-    }, []);
-    useEffect(() => {
-        const fetchBannerData = async () => {
-            try {
-                const response = await navbarAPi.getAll();
-
-                setNavbar(response);
-            } catch (error) {
-                console.log('Failed to fetch banner list: ', error);
-            }
-        };
-        fetchBannerData();
+        fetchImageData();
     }, []);
     return (
         <div>
