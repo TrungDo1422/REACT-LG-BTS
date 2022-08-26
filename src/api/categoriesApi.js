@@ -4,9 +4,9 @@ const categoriesApi = {
         const url = '/categories';
         return axiosClient.get(url, { params });
     },
-    updateComponent: ({id,title,categories }) => {
-        const url = `/categories/${id}`;
-        return axiosClient.patch(url, { id, title,categories});
+    patch: ({ id, iconUrl, content, course }) => {
+        const url = `/categories/update/${id}`;
+        return axiosClient.patch(url, { id, iconUrl, content, course });
     },
 };
 export default categoriesApi;

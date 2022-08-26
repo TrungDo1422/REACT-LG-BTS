@@ -8,22 +8,20 @@ function About({ about, notice }) {
                 <div>
                     <Row>
                         <Col lg={{ span: 8 }} md={24} sm={24} xs={24} className="order-last">
-                            {notice.notice?.map((item) => (
-                                <div key={item._id} className="about-road">
-                                    <h4> {item.title} </h4>
+                            <div className="about-road">
+                                <h4> ROAD TO BE A DEVPLUS </h4>
 
-                                    <ul>
-                                        {item.notice?.map((road) => (
-                                            <li key={road._id} className="d-flex" style={{ animationDelay: '300ms' }}>
-                                                <div className="numb">
-                                                    <span>{road.stt}</span>
-                                                </div>
-                                                <div className="desc">{road.description}</div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                                <ul>
+                                    {notice.notice?.map((item) => (
+                                        <li key={item._id} className="d-flex" style={{ animationDelay: '300ms' }}>
+                                            <div className="numb">
+                                                <span>{item.stt}</span>
+                                            </div>
+                                            <div className="desc">{item.description}</div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </Col>
 
                         <Col lg={{ span: 16 }} md={24} sm={24} xs={24}>
