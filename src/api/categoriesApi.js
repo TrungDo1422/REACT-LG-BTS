@@ -4,13 +4,10 @@ const categoriesApi = {
         const url = '/categories';
         return axiosClient.get(url, { params });
     },
-    patch: ({ id, title }) => {
+
+    patch: ({ id, iconUrl, content, course }) => {
         const url = `/categories/update/${id}`;
-        return axiosClient.patch(url, { id, title });
-    },
-    createItem: ({ id, iconUrl, content ,course}) => {
-        const url = `/categories/create/${id}`;
-        return axiosClient.post(url, { id, iconUrl, course, content });
+        return axiosClient.patch(url, { id, iconUrl, content, course });
     },
 };
 export default categoriesApi;

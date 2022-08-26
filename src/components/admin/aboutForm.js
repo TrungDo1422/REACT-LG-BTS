@@ -30,7 +30,7 @@ const AboutForm = ({ setLoading, setEdit, id, title, content, description }) => 
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const res = await aboutApi.patch({ id, title: titleInput, content: contentInput, description: descInput });
+        const res = await aboutApi.updateAbout({ id, title: titleInput, content: contentInput, description: descInput });
         setAboutData({ ...aboutData, res })
         setEdit(false)
         setLoading(true)
