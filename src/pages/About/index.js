@@ -13,7 +13,7 @@ const About = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [desc, setDesc] = useState('');
-    const [stt, setStt] = useState('');
+    const [noticeStt, setNoticeStt] = useState('');
     const [noticeDesc, setNotceDesc] = useState('');
 
 
@@ -38,7 +38,7 @@ const About = () => {
             }
         }
         fetchAbout();
-    }, []);
+    }, [aboutDatas]);
 
     useEffect(() => {
         if (loading) {
@@ -49,18 +49,6 @@ const About = () => {
 
                 } catch (error) {
                     console.log('Failed to fetch about list: ', error);
-                }
-            }
-            fetchAbout();
-        }
-        if (loading) {
-            const fetchAbout = async () => {
-                try {
-
-                    const response = await noticeApi.getAll();
-                    setNoticeDatas(response)
-                } catch (error) {
-                    console.log('Failed to fetch notice list: ', error);
                 }
             }
             fetchAbout();
@@ -121,25 +109,27 @@ const About = () => {
             ...aboutDatas,
             res,
         });
+        
         setOnCreate(false)
+        setLoading(true)
     }
     //Notice-----------------------------------------------
     const onSttInputChange = (event) => {
-        setStt(event.target.value);
+        setNoticeStt(event.target.value);
     };
     const onNoticeDescInputChange = (event) => {
         setNotceDesc(event.target.value);
-        console.log(noticeDesc)
     };
     const onNoticeSubmit = async (event) => {
         event.preventDefault();
-        const res = await noticeApi.createNotice({ stt: stt, description: noticeDesc });
+        const res = await noticeApi.createNotice({  stt: noticeStt, description: noticeDesc });
         setNoticeDatas({
             ...noticeDatas,
             res,
         });
-        setLoading(true)
+        
         setNoticeCreate(false)
+        setLoading(true)
     }
     const handleNoticeDelete = async (item) => {
         const newID = { id: item._id }
@@ -291,9 +281,9 @@ const About = () => {
                                     type="text"
                                     placeholder='Enter new title...'
                                     className="form-control mb-4"
-                                    id="stt"
-                                    name="stt"
-                                    value={stt}
+                                    id="noticeStt"
+                                    name="noticeStt"
+                                    value={noticeStt}
                                     required
                                     onChange={onSttInputChange}
                                 />
